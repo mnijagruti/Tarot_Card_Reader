@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Tales By Rashmi | Readings</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        *,
+        *::before,
+        *::after { box-sizing: border-box; }
+
+        html, body { overflow-x: hidden; }
+
+        img, svg { max-width: 100%; height: auto; }
+
+        .min-w-0 { min-width: 0; }
+        .truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        @media (max-width: 420px) {
+          nav .h-20 { height: 56px; }
+          .max-w-7xl { padding-left: 12px; padding-right: 12px; }
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+      
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white;
+            color: #0f0e17;
+            overflow-x: hidden;
+        }
+        
+        .font-cinzel {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #7f5af0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(15, 14, 23, 0.95);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 100;
+            border: 1px solid #7f5af0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .dropdown-content a {
+            color: #d8b4fe;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid #2d2b3a;
+        }
+        
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: rgba(127, 90, 240, 0.2);
+            color: #ffffff;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow,
+        .dropdown:focus-within .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            max-height: 500px;
+        }
+
+        /* Reading card animations */
+        .reading-card {
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+        
+        .reading-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -5px rgba(127, 90, 240, 0.3);
+        }
+        
+        .reading-image {
+            transition: all 0.4s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .reading-card:hover .reading-image {
+            transform: scale(1.05);
+        }
+        
+        .price-tag {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .reading-card:hover .price-tag::before {
+            left: 100%;
+        }
+        
+        /* Section animations */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f0e17 0%, #2d2b3a 100%);
+        }
+        
+        .purple-gradient {
+            background: linear-gradient(135deg, #4a044e 0%, #7f5af0 100%);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+          .lg\:grid-cols-2 { grid-template-columns: 1fr !important; }
+          .lg\:gap-12 { gap: 2rem !important; }
+          .text-4xl { font-size: 2.2rem !important; }
+          .text-6xl { font-size: 3rem !important; }
+          .hero-buttons { flex-direction: column; gap: 1rem; }
+          .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+        }
+
+        @media (max-width: 768px) {
+          .testimonial-grid, .services-grid, .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+          .hero-content { text-align: center; }
+          .section-heading { font-size: 2rem; }
+          .mobile-menu-button { display: block !important; }
+          .dropdown-content {
+            position: relative; margin-top: 0; box-shadow: none;
+            border: none; border-radius: 0; opacity: 1; transform: translateY(0);
+          }
+          #contact form input,
+          #contact form select,
+          #contact form textarea,
+          #contact form button { width: 100%; }
+          .hero img { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-purple-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20 md:h-20 min-h-0" style="height: 105px;">
+            <!-- BRAND -->
+            <div class="flex items-center min-w-0">
+              <img src="logo1.png" alt="Logo" class="h-14 w-14 object-contain flex-shrink-0 mr-3">
+      
+              <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+                <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+                  Tarot Tales By Rashmi
+                </span>
+                <span class="text-xs md:text-base italic font-cinzel text-pink-300 tracking-wide truncate">
+                  Ray of Light
+                </span>
+              </div>
+            </div>
+      
+            <!-- DESKTOP LINKS -->
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-8">
+                <a href="indexxx.html#home" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                <a href="indexxx.html#about" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+      
+                <div class="dropdown">
+                  <a href="#services" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium flex items-center">
+                    Services
+                    <svg class="dropdown-arrow w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </a>
+                  <div class="dropdown-content">
+                    <a href="reading1.html">Readings</a>
+                    <a href="healing1.html">Healing</a>
+                    <a href="indexxx.html">Learn</a>
+                  </div>
+                </div>
+      
+                <a href="indexxx.html#testimonials" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Testimonials</a>
+                <a href="indexxx.html#contact" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+              </div>
+            </div>
+      
+            <!-- HAMBURGER -->
+            <div class="md:hidden flex-shrink-0">
+              <button id="mobile-menu-button" class="text-purple-300 hover:text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- MOBILE MENU -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-black bg-opacity-90 hidden" style="margin-top:64px;">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="indexxx.html#home" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Home</a>
+          <a href="indexxx.html#about" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">About</a>
+      
+          <div class="px-3 py-2">
+            <button id="mobile-services-button" class="w-full text-left text-purple-100 hover:text-white flex items-center justify-between">
+              Services
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="mobile-services-menu" class="mt-2 pl-4 hidden">
+              <a href="reading1.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Readings</a>
+              <a href="healing1.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Healing</a>
+              <a href="indexxx.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Learn Tarot</a>
+            </div>
+          </div>
+      
+          <a href="indexxx.html#testimonials" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Testimonials</a>
+          <a href="indexxx.html#contact" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+      </div>
+
+    <!-- Hero Section -->
+    <!-- <section class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h1 class="text-4xl md:text-6xl font-cinzel font-bold mb-6 text-white">
+                    Intuitive <span class="text-purple-300">Readings</span>
+                </h1>
+                <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+                <p class="text-purple-200 max-w-3xl mx-auto text-lg">
+                    Explore our range of divination services to gain clarity and guidance on your life's journey.
+                </p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Readings Section -->
+    <section class="py-40 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <!-- Angelic/Oracle/Tarot Reading -->
+            <div class="mb-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="slide-in-left">
+                        <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-6 text-purple-800">
+                            Angelic / Oracle / Tarot Reading
+                        </h2>
+                        <p class="text-gray-700 mb-6">
+                            Mainly used for General reading, Relationship/Marriage, Health, Spirituality, Job/Business/Finance.
+                            These are all forms of divination using cards.
+                        </p>
+                        <ul class="text-gray-700 space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Tarot Cards:</strong> A deck of 78 cards with specific symbolism and meanings. I interpret the cards to provide insights into past, present, and future events.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Oracle Cards:</strong> These decks have a variety of themes and messages. They are often more intuitive and less structured than tarot cards which provide messages from Universe.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Angelic Cards:</strong> A type of oracle reading that focuses on messages from angels or spirit guides.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slide-in-right">
+                        <div class="reading-card bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 border border-purple-200 shadow-lg">
+                            <div class="text-center mb-6">
+                                <div class="reading-image w-full h-64 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                                    <img src="img1.jpeg" alt="Tarot Cards" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-cinzel text-purple-800 mb-2">Angelic / Oracle / Tarot Reading</h3>
+                                <p class="text-gray-600 text-sm">30-45 minute session</p>
+                            </div>
+                            <div class="text-center price-tag">
+                                <span class="text-3xl font-bold text-purple-700">$75</span>
+                                <button class="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Astro Tarot Reading -->
+            <div class="mb-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="order-2 md:order-1 slide-in-left">
+                        <div class="reading-card bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 border border-purple-200 shadow-lg">
+                            <div class="text-center mb-6">
+                                <div class="reading-image w-full h-64 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                                    <img src="img1.jpeg" alt="Astrology and Tarot" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-cinzel text-purple-800 mb-2">Astro Tarot Reading for Family</h3>
+                                <p class="text-gray-600 text-sm">45-60 minute session</p>
+                            </div>
+                            <div class="text-center price-tag">
+                                <span class="text-3xl font-bold text-purple-700">$95</span>
+                                <button class="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 slide-in-right">
+                        <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-6 text-purple-800">
+                            Astro Tarot Reading for Family
+                        </h2>
+                        <p class="text-gray-700 mb-6">
+                            This combines astrology and tarot. I use the birth charts of family members to get a deeper understanding of their personalities and relationships, and then use a tarot spread to provide specific insights and guidance.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            This reading helps you understand the energetic influences affecting your family relationships and provides guidance for healing and harmony.
+                        </p>
+                        <ul class="text-gray-700 space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Analyzes family patterns and dynamics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Reveals karmic connections and lessons</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Provides guidance for healing family relationships</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sand Reading -->
+            <div class="mb-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="slide-in-left">
+                        <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-6 text-purple-800">
+                            Sand Reading
+                        </h2>
+                        <p class="text-gray-700 mb-6">
+                            Sand Reading is a form of fortune telling that involves interpretation of lines in sand to gain insights and guidance. I scatter sand on a surface and then read the resulting shapes and lines with my intuition.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            The flowing nature of sand allows for a unique reading that captures the ever-changing energies of your life situation.
+                        </p>
+                        <ul class="text-gray-700 space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Reveals patterns and energies in your life</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Provides insights into current life flow</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Helps identify obstacles and opportunities</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slide-in-right">
+                        <div class="reading-card bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 border border-purple-200 shadow-lg">
+                            <div class="text-center mb-6">
+                                <div class="reading-image w-full h-64 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                                    <img src="img3.jpeg" alt="Sand Patterns" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-cinzel text-purple-800 mb-2">Sand Reading</h3>
+                                <p class="text-gray-600 text-sm">30-40 minute session</p>
+                            </div>
+                            <div class="text-center price-tag">
+                                <span class="text-3xl font-bold text-purple-700">$65</span>
+                                <button class="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Candle Wax Reading -->
+            <div class="mb-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="order-2 md:order-1 slide-in-left">
+                        <div class="reading-card bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 border border-purple-200 shadow-lg">
+                            <div class="text-center mb-6">
+                                <div class="reading-image w-full h-64 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                                    <img src="img2.jpeg" alt="Candle Wax" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-cinzel text-purple-800 mb-2">Candle Wax Reading</h3>
+                                <p class="text-gray-600 text-sm">25-35 minute session</p>
+                            </div>
+                            <div class="text-center price-tag">
+                                <span class="text-3xl font-bold text-purple-700">$55</span>
+                                <button class="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 slide-in-right">
+                        <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-6 text-purple-800">
+                            Candle Wax Reading
+                        </h2>
+                        <p class="text-gray-700 mb-6">
+                            Candle Wax Reading is an ancient form of divination where I ask a question and light a candle, and allow it to burn down, then interpret the resulting wax drippings and formations to gain insight into emotions, events, or energies.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            This reading is particularly effective for understanding the energies surrounding specific situations or questions.
+                        </p>
+                        <ul class="text-gray-700 space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Interprets wax patterns for spiritual messages</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Provides clarity on specific questions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Reveals hidden influences and energies</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dowsing -->
+            <div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in-left">
+                        <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-6 text-purple-800">
+                            Dowsing
+                        </h2>
+                        <p class="text-gray-700 mb-6">
+                            Pendulum techniques are used for seeking answers or information by interpreting the movements of a suspended pendulum. Common uses include divination, finding lost objects, healing, and yes-no answers. The pendulum acts as a tool to connect with the subconscious mind or a higher source of wisdom, with its movements believed to channel the user's intentions or subtle energies.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            Dowsing can be used for a variety of purposes including finding lost objects, identifying energy blockages, and receiving yes/no answers to questions.
+                        </p>
+                        <ul class="text-gray-700 space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Accesses subconscious knowledge through pendulum movement</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Provides clear yes/no answers to specific questions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Helps identify energy blockages and imbalances</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slide-in-right">
+                        <div class="reading-card bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 border border-purple-200 shadow-lg">
+                            <div class="text-center mb-6">
+                                <div class="reading-image w-full h-64 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                                    <img src="img4.jpeg" alt="Pendulum Dowsing" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-cinzel text-purple-800 mb-2">Dowsing</h3>
+                                <p class="text-gray-600 text-sm">20-30 minute session</p>
+                            </div>
+                            <div class="text-center price-tag">
+                                <span class="text-3xl font-bold text-purple-700">$50</span>
+                                <button class="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 purple-gradient">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-6 text-white">
+                Ready to Discover Your Path?
+            </h2>
+            <p class="text-purple-100 mb-8 text-lg">
+                Book a reading today and gain the clarity you need to navigate your life's journey with confidence.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html#contact" class="bg-white text-purple-700 hover:bg-purple-100 px-8 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                    Contact Me
+                </a>
+                <a href="tel:+1234567890" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-700 px-8 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-cinzel text-purple-300 mb-4">Tarot Tales By Rashmi</h3>
+                    <p class="text-purple-200">
+                        Providing intuitive tarot readings to help you navigate life's journey with clarity and confidence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-purple-200 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="index.html#about" class="text-purple-200 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="readings.html" class="text-purple-200 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="index.html#testimonials" class="text-purple-200 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="index.html#contact" class="text-purple-200 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Reading Hours</h3>
+                    <ul class="space-y-2 text-purple-200">
+                        <li class="flex justify-between"><span>Monday - Friday</span> <span>10am - 8pm</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>11am - 6pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
+                    <p class="text-purple-200 mb-4">
+                        Subscribe for monthly tarot insights and special offers.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-black bg-opacity-50 border border-purple-800 rounded-l-md px-4 py-2 text-white focus:outline-none w-full">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-purple-200 mb-4 md:mb-0">
+                    &copy; 2025 Tarot Tales By Rashmi. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="index.html#contact" class="w-16 h-16 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center text-white shadow-lg transform transition duration-300 hover:scale-110">
+            <i data-feather="message-circle" class="w-6 h-6"></i>
+        </a>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Mobile services menu functionality
+        document.getElementById('mobile-services-button').addEventListener('click', function() {
+            const mobileServicesMenu = document.getElementById('mobile-services-menu');
+            mobileServicesMenu.classList.toggle('hidden');
+        });
+
+        // Toggle mobile menu when button is clicked
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            toggleMobileMenu();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // toggle menu
+        mobileMenuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // close menu when clicking any link inside it
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+
+        // close services submenu when link is clicked
+        document.querySelectorAll("#mobile-services-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+
+        // toggle services submenu inside mobile
+        const mobileServicesButton = document.getElementById("mobile-services-button");
+        const mobileServicesMenu = document.getElementById("mobile-services-menu");
+
+        if (mobileServicesButton) {
+            mobileServicesButton.addEventListener("click", () => {
+                mobileServicesMenu.classList.toggle("hidden");
+            });
+        }
+    </script>
+</body>
+</html>
