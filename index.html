@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Tales By Rashmi  | Intuitive Guidance</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+      
+
+
+
+        /* box-sizing + prevent page overflow */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { overflow-x: hidden; }
+
+/* ensure img/svg don't force width */
+img, svg { max-width: 100%; height: auto; }
+
+/* ensure flex children can shrink */
+.min-w-0 { min-width: 0; }
+.truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* slightly reduce header spacing on very small screens */
+@media (max-width: 420px) {
+  nav .h-20 { height: 56px; } /* smaller nav height if needed */
+  .max-w-7xl { padding-left: 12px; padding-right: 12px; }
+}
+
+        html {
+  scroll-behavior: smooth;
+}
+      
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* background-color: #0f0e17; */
+            background-color: white;
+
+            /* color: #fffffe; */
+            color: #0f0e17;
+
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+         
+        }
+        .font-cinzel {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .tarot-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .tarot-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 20px 25px -5px rgba(217, 70, 239, 0.2), 0 10px 10px -5px rgba(217, 70, 239, 0.1);
+        }
+        .tarot-back {
+            background: radial-gradient(circle, #4a044e 0%, #19072d 100%);
+            border: 2px solid #7f5af0;
+        }
+        .tarot-border {
+            border: 1px solid #7f5af0;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #7f5af0;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+
+
+
+
+
+
+        /* dropdown menues */
+          /* Dropdown styles */
+          .dropdown {
+            position: relative;
+            /* display: inline-block; */
+        }
+        /* .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(15, 14, 23, 0.95);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 100;
+            border: 1px solid #7f5af0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        } */
+
+
+        .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* position directly below parent */
+    left: 0;
+    background-color: rgba(15, 14, 23, 0.95);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 100;
+    border: 1px solid #7f5af0;
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* prevent clicks when hidden */
+}
+        .dropdown-content a {
+            color: #d8b4fe;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid #2d2b3a;
+        }
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(127, 90, 240, 0.2);
+            color: #ffffff;
+        }
+            /* .dropdown:hover .dropdown-content {
+                display: block;
+                opacity: 1;
+                transform: translateY(0);
+            } */
+/* change from herer */
+        /* .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        } */
+
+
+        .dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+    opacity: 1;
+    pointer-events: auto; /* now links clickable */
+}
+
+
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+        /* .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        } */
+
+
+        .dropdown:hover .dropdown-arrow,
+        .dropdown:focus-within .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+
+         /* Mobile menu styles */
+        /* Mobile menu styles */
+        /* .mobile-menu {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        } */
+
+
+        #mobile-menu {
+  display: none;
+  position: fixed;   /* Make it fixed so it stays visible anywhere */
+  top: 0;            /* Align to top of viewport */
+  left: 0;
+  right: 0;
+  bottom: 0;         /* Fill full height */
+  background-color: rgba(0,0,0,0.95);
+  z-index: 9999;     /* Above everything else */
+  overflow-y: auto;  /* Allow scrolling if menu is tall */
+  padding-top: 1px; /* Space below nav bar */
+}
+#mobile-menu.show {
+  display: block;
+}
+
+        .mobile-menu.active {
+            display: block;
+            max-height: 500px;
+        }
+        
+        /* Prevent horizontal overflow */
+        /* .container {
+            max-width: 100%;
+            overflow-x: hidden;
+        } */
+        
+
+
+
+
+         /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .lg\:grid-cols-2 { grid-template-columns: 1fr !important; }
+      .lg\:gap-12 { gap: 2rem !important; }
+      .text-4xl { font-size: 2.2rem !important; }
+      .text-6xl { font-size: 3rem !important; }
+      .hero-buttons { flex-direction: column; gap: 1rem; }
+      .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+        /* Mobile adjustments */
+        /* @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .section-heading {
+                font-size: 2rem;
+            }
+            .testimonial-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .mobile-menu-button {
+        display: block !important;
+    }
+        } */
+
+        @media (max-width: 768px) {
+      .testimonial-grid, .services-grid, .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+      .hero-content { text-align: center; }
+      .section-heading { font-size: 2rem; }
+      /* .mobile-menu-button { display: block !important; } */
+
+
+       /* Mobile submenu */
+  #mobile-services-menu {
+    display: none; /* Hidden by default */
+    padding-left: 1rem; /* Indent submenu items */
+  }
+      /* .dropdown-content {
+        position: relative; margin-top: 0; box-shadow: none;
+        border: none; border-radius: 0; opacity: 1; transform: translateY(0);
+      } */
+      .dropdown-content {
+    display: none !important;
+  }
+
+
+  #mobile-services-menu.show {
+    display: block;
+  }
+      #contact form input,
+      #contact form select,
+      #contact form textarea,
+      #contact form button { width: 100%; }
+      .hero img { width: 100%; height: auto; }
+    }
+
+        
+    </style>
+</head> 
+<body class="min-h-screen ">
+    <!-- Navigation -->
+<!-- NAV (replace your existing <nav> ... </nav> & the mobile menu right after it) -->
+<nav class="bg-black bg-opacity-70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-purple-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 md:h-20 min-h-0" style="height: 105px;">
+        <!-- BRAND: allow shrink and truncation -->
+        <div class="flex items-center min-w-0">
+          <!-- <img src="logo1.png" alt="Logo" class="h-14 w-14 object-contain flex-shrink-0 mr-3"> -->
+          <img src="logo1.png" alt="Logo" class="h-20 w-20 object-contain flex-shrink-0 mr-1">
+          <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+            <!-- #D8B4FE,eaeaea -->
+            <!-- <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate"    style="color: #eaeaea; text-shadow: 0 0 6px #C084FC, 0 0 10px #D8B4FE; letter-spacing: 1px;"> -->
+              <!-- <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate"    style="color: #eaeaea; text-shadow: 0 0 6px #C084FC, 0 0 10px #D8B4FE; letter-spacing: 1px;"> -->
+              <!-- <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate"    style="color: #eaeaea; text-shadow: 0 0 6px #352D3E, 0 0 10px #D8B4FE; letter-spacing: 1px;"> -->
+              
+                <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+                <!-- color: #D8B4FE;
+                text-shadow: 0 0 6px #352D3E, 0 0 10px #CA9FF9;
+                letter-spacing: 1px; -->
+              Tarot Tales By Rashmi
+              <!-- Tarot  -->
+
+            </span>
+            <!-- text-4xl md:text-5xl font-cinzel font-bold mb-6 text-white" -->
+            <!-- <span class="text-xs md:text-base italic font-cinzel text-pink-300 tracking-wide truncate text-right">
+              Ray of Light
+            </span> -->
+            
+            <!-- <span class="text-xs md:text-base tracking-wide truncate text-right glow-text" 
+      style="font-family: 'Great Vibes', cursive; color: #FFD700; font-size: 1.25rem; letter-spacing: 1px;">
+  Ray of Light
+</span> -->
+<!-- <span class="text-lg md:text-2xl  text-pink-300 tracking-wide truncate text-right"
+style="font-family: 'Great Vibes', cursive;">
+  Ray of Light
+</span>  -->
+
+  <span class="text-lg md:text-2xl glow-text text-right" 
+        style="font-family: 'Great Vibes', cursive; color: #FFD700; text-shadow: 0 0 8px #FFD700, 0 0 12px #FFEA00, 0 0 16px #FFE066;margin-right:8px;letter-spacing: 2px;">
+    Ray of Light
+  </span>
+
+          </div>
+        </div>
+  
+
+
+
+
+
+
+
+
+  
+        
+     
+        
+        
+        <!-- DESKTOP LINKS -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#home" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+            <a href="#about" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+  
+            <div class="dropdown">
+              <!-- <a href="#services" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium flex items-center"> -->
+                <span class="nav-link text-purple-100 px-3 py-2 text-sm font-medium flex items-center cursor-pointer">
+                  Services
+                <!-- Services -->
+                <svg class="dropdown-arrow w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                <!-- <svg class="dropdown-arrow w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg> -->
+              </span>
+              <!-- </a> -->
+              <div class="dropdown-content">
+                <a href="reading11.html">Readings</a>
+                <a href="healing1.html">Healing</a>
+                <a href="index.html">Learn</a>
+              </div>
+            </div>
+  
+            <a href="#testimonials" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Testimonials</a>
+            <a href="#contact" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+          </div>
+        </div>
+  
+        <!-- HAMBURGER (always visible on small screens) -->
+        <div class="md:hidden flex-shrink-0">
+          <button id="mobile-menu-button" class="text-purple-300 hover:text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </nav>
+  
+  <!-- MOBILE MENU (place right after the nav) margin-top:64px before then change to 107px ok -->
+  <div id="mobile-menu" class="mobile-menu md:hidden bg-black bg-opacity-90 hidden" style="margin-top:107px;">  
+   
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#home" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Home</a>
+      <a href="#about" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">About</a>
+  
+      <div class="px-3 py-2">
+        <button id="mobile-services-button" class="w-full text-left text-purple-100 hover:text-white flex items-center justify-between">
+          Services
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="mobile-services-menu" class="mt-2 pl-4 hidden">
+          <a href="reading11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Readings</a>
+          <a href="healing1.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Healing</a>
+          <a href="index.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Learn Tarot</a>
+        </div>
+      </div>
+  
+      <a href="#testimonials" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Testimonials</a>
+      <a href="#contact" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Contact</a>
+    </div>
+  </div>
+  
+
+
+
+
+<!--  -->
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-4xl font-cinzel font-bold mb-6 text-white">
+                        <span class="text-purple-300">Unlock</span> Your Destiny
+                    </h1>
+                    <p class="text-lg text-purple-100 mb-8 max-w-lg">
+                        Discover profound insights and guidance through my intuitive tarot readings. Each card tells a story - let me help you understand yours.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#readings" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                            Get a Reading
+                        </a>
+                        <a href="#about" class="border border-purple-500 text-purple-300 hover:bg-purple-900 hover:bg-opacity-50 px-6 py-3 rounded-md font-medium transition duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-purple-800 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-pink-800 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1627764574958-fb54cd7d7448?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGFyb3QlMjByZWFkaW5nfGVufDB8fDB8fHww" alt="Tarot Reader" class="rounded-lg shadow-2xl border-2 border-purple-500 w-full">
+                        <!-- <img src="profileimg.jpeg" alt="Tarot Reader" class="rounded-lg shadow-2xl border-2 border-purple-500 w-full"> -->
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-cinzel font-bold mb-4 text-white">
+                    About <span class="text-purple-300">The Reader</span>
+                </h2>
+                <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+                <p class="text-purple-200 max-w-3xl mx-auto">
+                    With over 15 years of experience, I've helped thousands find clarity and direction through the ancient wisdom of tarot.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1627764574958-fb54cd7d7448?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGFyb3QlMjByZWFkaW5nfGVufDB8fDB8fHww" alt="Tarot Reader" class="rounded-lg shadow-xl border-2 border-purple-500 w-full">
+                   
+                    
+            
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-cinzel text-purple-300 mb-4">My Journey</h3>
+                    <p class="text-purple-100 mb-6">
+                        My connection with tarot began in childhood, inherited from my grandmother who was a renowned seer in our community. What started as curiosity became a lifelong passion and calling.
+                    </p>
+                    <p class="text-purple-100 mb-6">
+                        I combine traditional tarot wisdom with intuitive psychic abilities to provide readings that are both insightful and practical. My approach is compassionate yet honest - I believe tarot should empower, not frighten.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="mr-3 text-purple-400">
+                                <i data-feather="award"></i>
+                            </div>
+                            <span class="text-purple-100">15+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-purple-400">
+                                <i data-feather="users"></i>
+                            </div>
+                            <span class="text-purple-100">5000+ Clients</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-purple-400">
+                                <i data-feather="heart"></i>
+                            </div>
+                            <span class="text-purple-100">Compassionate</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-purple-400">
+                                <i data-feather="eye"></i>
+                            </div>
+                            <span class="text-purple-100">Intuitive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+
+
+
+    <!-- new try -->
+<!-- About Section -->
+<section id="about" class="py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-black">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Heading -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h3 class="text-3xl md:text-4xl font-cinzel font-bold mb-4 text-white">
+          About <span class="text-purple-300">Rashmi</span>
+        </h3>
+        <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+        <p class="text-purple-200 max-w-3xl mx-auto">
+          Guiding you with Tarot, Reiki, and Spiritual Healing for over 12 years.
+        </p>
+      </div>
+  
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Image -->
+        <div data-aos="fade-right">
+          <img src="profileimg.jpeg" alt="Tarot Reader" 
+               class="rounded-lg shadow-2xl border-2 border-purple-500 w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+        </div>
+  
+        <!-- Text Content -->
+        <div data-aos="fade-left">
+          <h3 class="text-2xl font-cinzel text-purple-300 mb-6">Atma Namaste 🙏</h3>
+          
+          <p class="text-purple-100 mb-4">
+            I’m <span class="font-semibold text-purple-200">Rashmi</span>, a Certified 🌻 
+            <span class="font-semibold">Tarot Reader</span>, 🌻 <span class="font-semibold">Reiki Master</span>, and 🌻 
+            <span class="font-semibold">Lama Fera Healer</span> with over <span class="font-semibold">12 years of experience</span>.
+            As a clairvoyant, my passion lies in helping individuals uncover their true potential and lead more fulfilling lives.
+          </p>
+  
+          <p class="text-purple-100 mb-4">
+            My spiritual journey began at a young age, and over the years I’ve immersed myself in various modalities to deepen my understanding of the 
+            <span class="italic">mind-body-spirit connection</span>. This extensive experience has enabled me to craft a <span class="font-semibold">personalized healing approach</span> for each of my clients.
+          </p>
+  
+          <!-- Services -->
+          <div class="space-y-4 mb-6">
+            <div>
+              <h4 class="text-lg font-semibold text-purple-300">🔮 Tarot Reading</h4>
+              <p class="text-purple-100">
+                I use Tarot as a tool for insight, reflection, and self-discovery, helping you understand your current situation, recognize the energies influencing your life, and make informed decisions for your future.
+                 Every reading is approached with compassion, honesty, and respect for your unique journey, ensuring confidentiality and trust.
+                <!-- I use Tarot as a tool  -->
+                <!-- Tarot is my tool  -->
+                <!-- for insight, reflection, and self-discovery. I help you recognize the energies shaping your life and guide you toward informed decisions — always with compassion, honesty, and respect. -->
+              </p>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-purple-300">🌟 Reiki Healing</h4>
+              <p class="text-purple-100">
+                As a Certified Reiki Grandmaster, I channel healing energy to restore balance, relaxation, and
+                 well-being. My approach combines traditional Reiki techniques with intuitive healing to release negative energy, 
+                emotional blockages, and support your body’s natural healing processes.
+                <!-- As a Certified Reiki Grandmaster, I channel universal energy to restore balance, release blockages, and support natural healing — blending traditional Reiki with intuitive methods. -->
+              </p>
+            </div>
+          </div>
+  
+          <!-- Closing -->
+          <p class="text-purple-100 mb-6">
+            I believe in the unique power of every individual to shape their reality.
+             That's why I offer tailored, personalized services that address your specific needs and preferences. 
+             Virtual consultations are available for your convenience. Whether you seek guidance, healing, or self-discovery,
+             I’m here to support you on your transformative journey.
+            <!-- I believe each soul has the power to shape its reality. That’s why my services are <span class="font-semibold">tailored</span> to your unique needs, available virtually for your convenience. -->
+          </p>
+          <p class="text-purple-100 mb-6">
+            Thank you for considering my services. I look forward to helping you achieve greater balance, fulfilment, and overall well-being.
+            <!-- I believe each soul has the power to shape its reality. That’s why my services are <span class="font-semibold">tailored</span> to your unique needs, available virtually for your convenience. -->
+          </p>
+          <!-- <p class="text-purple-200 italic font-light">
+            “My mission is to simplify, uplift, and enhance the lives of my clients.”
+          </p> -->
+          <p class="text-purple-200 italic font-light text-lg ">
+            “My mission is to simplify, uplift, and enhance the lives of my clients.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- About Section -->
+<!-- <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-black">
+    <div class="max-w-7xl mx-auto">
+   
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-5xl font-cinzel font-bold mb-4 text-white">
+          About <span class="text-purple-300">Rashmi</span>
+        </h2>
+        <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+        <p class="text-purple-200 max-w-3xl mx-auto text-lg leading-relaxed">
+          Guiding you with Tarot, Reiki, and Spiritual Healing for over 12 years.
+        </p>
+      </div>
+  
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+       
+        <div data-aos="fade-right" class="flex justify-center">
+          <img src="profileimg.jpeg" alt="Tarot Reader"
+               class="rounded-2xl shadow-2xl border-2 border-purple-500 w-full max-w-sm md:max-w-md lg:max-w-lg">
+        </div>
+  
+       
+        <div data-aos="fade-left" class="space-y-6">
+          <h3 class="text-2xl font-cinzel text-purple-300">Atma Namaste 🙏</h3>
+  
+          <p class="text-purple-100 leading-relaxed">
+            I’m <span class="font-semibold text-purple-200">Rashmi</span>, a Certified 🌻 
+            <span class="font-semibold">Tarot Reader</span>, 🌻 <span class="font-semibold">Reiki Master</span>, and 🌻 
+            <span class="font-semibold">Lama Fera Healer</span> with over <span class="font-semibold">12 years of experience</span>.
+            As a clairvoyant, my passion lies in helping individuals uncover their true potential and lead more fulfilling lives.
+          </p>
+  
+          <p class="text-purple-100 leading-relaxed">
+            My spiritual journey began at a young age, and over the years I’ve immersed myself in various modalities to deepen my understanding of the 
+            <span class="italic">mind-body-spirit connection</span>. This extensive experience has enabled me to craft a 
+            <span class="font-semibold">personalized healing approach</span> for each of my clients.
+          </p>
+  
+        
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-lg font-semibold text-purple-300">🔮 Tarot Reading</h4>
+              <p class="text-purple-100 leading-relaxed">
+                I use Tarot as a tool for insight, reflection, and self-discovery, helping you understand your current situation, recognize the energies influencing your life, and make informed decisions for your future. Every reading is approached with compassion, honesty, and respect for your unique journey, ensuring confidentiality and trust.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-purple-300">🌟 Reiki Healing</h4>
+              <p class="text-purple-100 leading-relaxed">
+                As a Certified Reiki Grandmaster, I channel healing energy to restore balance, relaxation, and well-being. My approach combines traditional Reiki techniques with intuitive healing to release negative energy, emotional blockages, and support your body’s natural healing processes.
+              </p>
+            </div>
+          </div>
+  
+         
+          <p class="text-purple-100 leading-relaxed">
+            I believe in the unique power of every individual to shape their reality. That's why I offer tailored, personalized services that address your specific needs and preferences. Virtual consultations are available for your convenience. Whether you seek guidance, healing, or self-discovery, I’m here to support you on your transformative journey.
+          </p>
+  
+          <p class="text-purple-100 leading-relaxed">
+            Thank you for considering my services. I look forward to helping you achieve greater balance, fulfilment, and overall well-being.
+          </p>
+  
+          <p class="text-purple-200 italic font-light text-lg">
+            “My mission is to simplify, uplift, and enhance the lives of my clients.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  
+
+
+
+    <!-- Readings Section -->
+    <section id="readings" class="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-3xl md:text-4xl font-cinzel font-bold mb-4 text-white">
+                    Tarot <span class="text-purple-300">Readings</span>
+                </h3>
+                <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+                <p class="text-purple-200 max-w-3xl mx-auto">
+                    Choose the reading that resonates with your current needs. All readings are conducted with care and confidentiality.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Reading 1 -->
+                <div class="bg-gradient-to-b from-purple-900 to-black rounded-xl p-6 border border-purple-800 transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-purple-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="moon" class="w-8 h-8 text-purple-300"></i>
+                        </div>
+                        <h3 class="text-xl font-cinzel text-purple-300 mb-2">Celtic Cross</h3>
+                        <p class="text-purple-200 text-sm">30-45 min reading</p>
+                    </div>
+                    <p class="text-purple-100 mb-6">
+                        The most comprehensive reading covering all aspects of your life - past influences, present challenges, future possibilities, and hidden factors.
+                    </p>
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-white">$75</span>
+                        <button class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md font-medium transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reading 2 -->
+                <div class="bg-gradient-to-b from-purple-900 to-black rounded-xl p-6 border border-purple-800 transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-purple-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="heart" class="w-8 h-8 text-purple-300"></i>
+                        </div>
+                        <h3 class="text-xl font-cinzel text-purple-300 mb-2">Love & Relationships</h3>
+                        <p class="text-purple-200 text-sm">20-30 min reading</p>
+                    </div>
+                    <p class="text-purple-100 mb-6">
+                        Gain clarity about your romantic life, current relationship dynamics, or future love prospects. Understand the energies surrounding your heart.
+                    </p>
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-white">$60</span>
+                        <button class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md font-medium transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reading 3 -->
+                <div class="bg-gradient-to-b from-purple-900 to-black rounded-xl p-6 border border-purple-800 transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-purple-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="briefcase" class="w-8 h-8 text-purple-300"></i>
+                        </div>
+                        <h3 class="text-xl font-cinzel text-purple-300 mb-2">Career Path</h3>
+                        <p class="text-purple-200 text-sm">20-30 min reading</p>
+                    </div>
+                    <p class="text-purple-100 mb-6">
+                        Insight into your professional journey, current work situation, and guidance for making career decisions aligned with your soul's purpose.
+                    </p>
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-white">$60</span>
+                        <button class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md font-medium transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-3xl md:text-4xl font-cinzel font-bold mb-4 text-white">
+                    Client <span class="text-purple-300">Testimonials</span>
+                </h3>
+                <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+                <p class="text-purple-200 max-w-3xl mx-auto">
+                    <!-- Hear from those who have experienced the transformative power of tarot guidance. -->
+                    Words of praise by my valuable clients.
+                </p>
+            </div>
+            <!-- <div class="grid md:grid-cols-3 gap-8"> -->
+              <div class="grid md:grid-cols-2 gap-8 justify-center">
+                <div class="bg-black bg-opacity-50 rounded-xl p-6 border border-purple-800" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="Client" class="w-12 h-12 rounded-full mr-4 border border-purple-500">
+                        <div>
+                            <h4 class="text-white font-medium">Sarah J.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-purple-100 italic">
+                        "The reading was incredibly accurate and gave me the clarity I needed about my relationship. The guidance was compassionate yet honest. I feel so much more at peace now."
+                    </p>
+                </div>
+
+               
+                <div class="bg-black bg-opacity-50 rounded-xl p-6 border border-purple-800" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/2" alt="Client" class="w-12 h-12 rounded-full mr-4 border border-purple-500">
+                        <div>
+                            <h4 class="text-white font-medium">Michael T.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-purple-100 italic">
+                        "I was skeptical at first, but the career reading was spot on. It confirmed things I already felt but was afraid to acknowledge. Three months later, I took the leap she suggested and couldn't be happier."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <!-- <div class="bg-black bg-opacity-50 rounded-xl p-6 border border-purple-800" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/3" alt="Client" class="w-12 h-12 rounded-full mr-4 border border-purple-500">
+                        <div>
+                            <h4 class="text-white font-medium">Emma L.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-purple-100 italic">
+                        "The Celtic Cross reading was life-changing. It helped me understand patterns from my past that were affecting my present. The insights were delivered with such wisdom and kindness."
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-cinzel font-bold mb-4 text-white">
+                    Contact <span class="text-purple-300">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+                <p class="text-purple-200 max-w-3xl mx-auto">
+                    Ready for your reading? Have questions? Reach out - I'd love to connect with you.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-purple-200 mb-1">Your Name</label>
+                            <input type="text" id="name" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email Address</label>
+                            <input type="email" id="email" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-purple-200 mb-1">Subject</label>
+                            <select id="subject" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option value="">Select a topic</option>
+                                <option value="reading">Book a Reading</option>
+                                <option value="question">General Question</option>
+                                <option value="event">Event Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-purple-200 mb-1">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="bg-black bg-opacity-50 border border-purple-800 rounded-xl p-8 h-full">
+                        <h3 class="text-xl font-cinzel text-purple-300 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="mr-4 text-purple-400 mt-1">
+                                    <i data-feather="mail"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Email</h4>
+                                    <p class="text-purple-200">readings@mystictarot.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mr-4 text-purple-400 mt-1">
+                                    <i data-feather="phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Phone</h4>
+                                    <p class="text-purple-200">(555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mr-4 text-purple-400 mt-1">
+                                    <i data-feather="map-pin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Location</h4>
+                                    <p class="text-purple-200">Online readings available worldwide</p>
+                                    <p class="text-purple-200">In-person in Sedona, AZ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-cinzel text-purple-300 mb-4">Follow Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300">
+                                    <i data-feather="instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300">
+                                    <i data-feather="facebook"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300">
+                                    <i data-feather="twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300">
+                                    <i data-feather="youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+
+
+
+
+    <!-- new modified contact section -->
+
+<!-- Contact Section -->
+<section id="contact" class="py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-black">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Heading -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-4 text-white">
+          Contact <span class="text-purple-300">Me</span>
+        </h2>
+        <div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+        <p class="text-purple-200 max-w-3xl mx-auto">
+          For In-person or Online Appointments, feel free to reach out. I’d love to connect with you.
+        </p>
+      </div>
+  
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div data-aos="fade-right">
+          <!-- <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-purple-200 mb-1">Your Name</label>
+              <input type="text"  id="name" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email Address</label>
+              <input type="email" id="email" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-purple-200 mb-1">Subject</label>
+              <select id="subject" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <option value="">Select a topic</option>
+                <option value="reading">Book a Reading</option>
+                <option value="question">General Question</option>
+                <option value="event">Event Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-purple-200 mb-1">Your Message</label>
+              <textarea id="message" rows="4" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+              Send Message
+            </button>
+          </form> -->
+      
+          <form id="contact-form" class="space-y-6" onsubmit="sendEmail(event)">
+            <div>
+              <label for="name" class="block text-sm font-medium text-purple-200 mb-1">Your Name</label>
+              <input type="text" id="name" name="user_name" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email Address</label>
+              <input type="email" id="email" name="user_email" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-purple-200 mb-1">Subject</label>
+              <select id="subject" name="subject" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <option value="">Select a topic</option>
+                <option value="Book a Reading">Book a Reading</option>
+                <option value="General Question">General Question</option>
+                <option value="Event Inquiry">Event Inquiry</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-purple-200 mb-1">Your Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full bg-black bg-opacity-50 border border-purple-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+              Send Message
+            </button>
+          </form>
+          
+       
+       
+       
+        </div>
+  
+        <!-- Contact Info -->
+        <!-- <div data-aos="fade-left">
+          <div class="bg-black bg-opacity-50 border border-purple-800 rounded-xl p-8 h-full">
+            <h3 class="text-xl font-cinzel text-purple-300 mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="mr-4 text-purple-400 mt-1">
+                  <i data-feather="map-pin"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium mb-1">Location</h4>
+                  <p class="text-purple-200">Mumbai, India</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="mr-4 text-purple-400 mt-1">
+                  <i data-feather="phone"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium mb-1">Phone</h4>
+                  <p class="text-purple-200">+91 7400110582</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="mr-4 text-purple-400 mt-1">
+                  <i data-feather="mail"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium mb-1">Email</h4>
+                  <p class="text-purple-200">tarottales2@gmail.com</p>
+                </div>
+
+
+                <div class="flex items-start">
+                  <div class="mr-4 text-purple-400 mt-1">
+                    <i data-feather="send"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-medium mb-1">Telegram</h4>
+                    <a href="https://t.me/boost/tarottalesbyrashmi" target="_blank" class="text-purple-200 hover:text-white transition duration-300">
+                      @tarottalesbyrashmi
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+           
+            <div class="mt-8">
+              <h3 class="text-xl font-cinzel text-purple-300 mb-4">Follow Me</h3>
+              <div class="flex flex-wrap gap-4">
+                <a href="https://www.youtube.com/@tarottalesbyrashmi" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="YouTube">
+                  <i data-feather="youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/tarottalesbyrashmi/" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="Instagram">
+                  <i data-feather="instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/rayoflight.spiritual" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="Facebook">
+                  <i data-feather="facebook"></i>
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vb2EQDHBvvsefoWM8w0B" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="WhatsApp">
+                  <i data-feather="message-circle"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+
+        <div data-aos="fade-left">
+          <div class="bg-black bg-opacity-50 border border-purple-800 rounded-xl p-8 h-full">
+            <h3 class="text-xl font-cinzel text-purple-300 mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="mr-4 text-purple-400 mt-1">
+                  <i data-feather="map-pin"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium mb-1">Location</h4>
+                  <p class="text-purple-200">Mumbai, India</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="mr-4 text-purple-400 mt-1">
+                  <i data-feather="phone"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium mb-1">Phone</h4>
+                  <p class="text-purple-200">+91 7400110582</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="mr-4 text-purple-400 mt-1">
+                  <i data-feather="mail"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium mb-1">Email</h4>
+                  <p class="text-purple-200">tarottales2@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="mr-4 text-purple-400 mt-1">
+                  <i data-feather="send"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium mb-1">Telegram</h4>
+                  <a href="https://t.me/boost/tarottalesbyrashmi" target="_blank" class="text-purple-200 hover:text-white transition duration-300">
+                    @tarottalesbyrashmi
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Social Links -->
+            <div class="mt-8">
+              <h3 class="text-xl font-cinzel text-purple-300 mb-4">Follow Me</h3>
+              <div class="flex flex-wrap gap-4">
+                <a href="https://www.youtube.com/@tarottalesbyrashmi" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="YouTube">
+                  <i data-feather="youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/tarottalesbyrashmi/" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="Instagram">
+                  <i data-feather="instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/rayoflight.spiritual" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="Facebook">
+                  <i data-feather="facebook"></i>
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vb2EQDHBvvsefoWM8w0B" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="WhatsApp">
+                  <i data-feather="message-circle"></i>
+                </a>
+                <a href="https://t.me/boost/tarottalesbyrashmi" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 flex items-center justify-center text-purple-300 hover:bg-purple-700 transition duration-300" aria-label="Telegram">
+                  <i data-feather="send"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-cinzel text-purple-300 mb-4">Tarot Tales By Rashmi</h3>
+                    <p class="text-purple-200">
+                        Providing intuitive tarot readings to help you navigate life's journey with clarity and confidence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-purple-200 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-purple-200 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#readings" class="text-purple-200 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#testimonials" class="text-purple-200 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-purple-200 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Reading Hours</h3>
+                    <ul class="space-y-2 text-purple-200">
+                        <li class="flex justify-between"><span>Monday - Friday</span> <span>10am - 8pm</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>11am - 6pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
+                    <p class="text-purple-200 mb-4">
+                        Subscribe for monthly tarot insights and special offers.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-black bg-opacity-50 border border-purple-800 rounded-l-md px-4 py-2 text-white focus:outline-none w-full">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-purple-200 mb-4 md:mb-0">
+                    &copy; 2025 Tarot Tales By Rashmi. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="#contact" class="w-16 h-16 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center text-white shadow-lg transform transition duration-300 hover:scale-110">
+            <i data-feather="message-circle" class="w-6 h-6"></i>
+        </a>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+
+
+
+
+//         // Mobile menu functionality
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('active');
+}
+
+// // Mobile services menu functionality
+document.getElementById('mobile-services-button').addEventListener('click', function() {
+    const mobileServicesMenu = document.getElementById('mobile-services-menu');
+    mobileServicesMenu.classList.toggle('hidden');
+});
+
+// // Toggle mobile menu when button is clicked
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    toggleMobileMenu();
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+    }
+});
+
+
+
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // toggle menu
+  mobileMenuButton.addEventListener("click", () => {
+    // mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("show"); // toggle show class
+  });
+
+  // close menu when clicking any link inside it
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      // mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("show");
+    });
+  });
+
+  // close services submenu when link is clicked
+  document.querySelectorAll("#mobile-services-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+
+  // toggle services submenu inside mobile
+  const mobileServicesButton = document.getElementById("mobile-services-button");
+  const mobileServicesMenu = document.getElementById("mobile-services-menu");
+
+  if (mobileServicesButton) {
+    mobileServicesButton.addEventListener("click", () => {
+      // mobileServicesMenu.classList.toggle("hidden");
+      mobileServicesMenu.classList.toggle("show"); // toggle 'show' class instead of hidden
+    });
+  }
+
+
+
+
+
+  (function(){
+    emailjs.init("_Z4KNnjSnhivkvh72"); // replace with your actual Public Key
+  })();
+
+
+
+function sendEmail(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  emailjs.sendForm('service_cbgel4l', 'template_kkddrkb', '#contact-form')
+    .then(function() {
+      alert('Message sent successfully!');
+      document.getElementById('contact-form').reset();
+    }, function(error) {
+      alert('Failed to send message. Please try again.');
+      console.error('EmailJS error:', error);
+    });
+}
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
