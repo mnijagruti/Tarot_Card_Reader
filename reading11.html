@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Tales By Rashmi  | Intuitive Guidance</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+    
+        /* box-sizing + prevent page overflow */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { overflow-x: hidden; }
+
+/* ensure img/svg don't force width */
+img, svg { max-width: 100%; height: auto; }
+
+/* ensure flex children can shrink */
+.min-w-0 { min-width: 0; }
+.truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* slightly reduce header spacing on very small screens */
+@media (max-width: 420px) {
+  nav .h-20 { height: 56px; } /* smaller nav height if needed */
+  .max-w-7xl { padding-left: 12px; padding-right: 12px; }
+}
+
+        html {
+  scroll-behavior: smooth;
+}
+      
+        .font-cinzel {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */  
+            background: #0f0e17;
+            color: #fffffe;
+            overflow-x: hidden;
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(127, 90, 240, 0.3);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #7f5af0, #d946ef);
+            margin: 0 auto;
+        }
+        .screenshot-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: #1a1832;
+        }
+       
+.screenshot-image {
+    width: 100%;
+    max-height: 500px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+        .screenshot-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 14, 23, 0.9);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .screenshot-container:hover .screenshot-overlay {
+            transform: translateY(0);
+        }
+        .screenshot-footer {
+            padding: 12px 15px;
+            text-align: center;
+            font-style: italic;
+            border-top: 1px solid #2d2b42;
+            background: rgba(15, 14, 23, 0.8);
+        }
+        .instagram-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .tarot-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .tarot-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 20px 25px -5px rgba(217, 70, 239, 0.2), 0 10px 10px -5px rgba(217, 70, 239, 0.1);
+        }
+        .tarot-back {
+            background: radial-gradient(circle, #4a044e 0%, #19072d 100%);
+            border: 2px solid #7f5af0;
+        }
+        .tarot-border {
+            border: 1px solid #7f5af0;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #7f5af0;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* dropdown menues */
+        .dropdown {
+            position: relative;
+        }
+      
+.dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(15, 14, 23, 0.98);
+        min-width: 220px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+        z-index: 1000;
+        border: 1px solid #7f5af0;
+        border-radius: 4px;
+        padding: 8px 0;
+        pointer-events: none;
+    }
+        .dropdown-content a {
+            color: #d8b4fe;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #2d2b3a;
+        }
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(127, 90, 240, 0.3);
+            color: #ffffff;
+            padding-left: 20px;
+        }
+            
+   /* FLYOUT SUBMENU */
+   .flyout-item {
+        position: relative;
+    }
+    .flyout-menu {
+        display: none;
+        position: absolute;
+        top: -8px; /* Align with the top of parent dropdown */
+        left: 100%; /* Position to the right */
+        background-color: rgba(15, 14, 23, 0.98);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+        z-index: 1001; /* Higher than main dropdown */
+        border: 1px solid #7f5af0;
+        border-radius: 4px;
+        padding: 8px 0;
+        margin-left: 2px; /* Small gap from main menu */
+        pointer-events: none;
+    }
+    .flyout-menu a {
+        color: #d8b4fe;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #2d2b3a;
+        transition: all 0.3s ease;
+    }
+    .flyout-menu a:last-child {
+        border-bottom: none;
+    }
+    .flyout-menu a:hover {
+        background-color: rgba(127, 90, 240, 0.3);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+
+        .dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+    opacity: 1;
+    pointer-events: auto; /* now links clickable */
+}
+
+    .flyout-item:hover .flyout-menu,
+    .flyout-item:focus-within .flyout-menu {
+        display: block;
+        pointer-events: auto;
+    }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-arrow,
+        .dropdown:focus-within .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        #mobile-menu {
+  display: none;
+  position: fixed;   /* Make it fixed so it stays visible anywhere */
+  top: 0;            /* Align to top of viewport */
+  left: 0;
+  right: 0;
+  bottom: 0;         /* Fill full height */
+  background-color: rgba(0,0,0,0.95);
+  z-index: 9999;     /* Above everything else */
+  overflow-y: auto;  /* Allow scrolling if menu is tall */
+  padding-top: 1px; /* Space below nav bar */
+  margin-top: 107px;
+}
+#mobile-menu.show {
+  display: block;
+}
+
+        .mobile-menu.active {
+            display: block;
+            max-height: 500px;
+        }
+        
+        /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .lg\:grid-cols-2 { grid-template-columns: 1fr !important; }
+      .lg\:gap-12 { gap: 2rem !important; }
+      .text-4xl { font-size: 2.2rem !important; }
+      .text-6xl { font-size: 3rem !important; }
+      .hero-buttons { flex-direction: column; gap: 1rem; }
+      .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+        @media (max-width: 768px) {
+      .testimonial-grid, .services-grid, .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+      .hero-content { text-align: center; }
+      .section-heading { font-size: 2rem; }
+      
+      /* Mobile submenu */
+  #mobile-services-menu {
+    display: none; /* Hidden by default */
+    padding-left: 1rem; /* Indent submenu items */
+  }
+    
+      .dropdown-content {
+    display: none !important;
+  }
+  #mobile-learn-menu {
+        display: none;
+        padding-left:1rem;
+      }
+
+  #mobile-services-menu.show {
+    display: block;
+  }  
+   #mobile-learn-menu.show {
+        display: block;
+      }
+      .dropdown-content, .flyout-menu {
+        display: none !important;
+      }
+      #contact form input,
+      #contact form select,
+      #contact form textarea,
+      #contact form button { width: 100%; }
+      .hero img { width: 100%; height: auto; }
+    }
+
+        /* NEW CARD STYLES */
+        .gradient-border {
+            position: relative;
+            border-radius: 24px;
+            padding: 2px;
+            background: linear-gradient(135deg, #fbbf24, #a855f7, #2dd4bf);
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            padding: 2px;
+            background: linear-gradient(135deg, #fbbf24, #a855f7, #2dd4bf);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .card-inner {
+            border-radius: 22px;
+            overflow: hidden;
+            background: rgba(30, 20, 50, 0.7);
+            backdrop-filter: blur(10px);
+            height: 100%;
+        }
+
+        /* Floating animation */
+        @keyframes floaty {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.45); }
+        }
+
+        .card-hover:hover {
+            animation: glowPulse 3s ease-in-out infinite, floaty 6s ease-in-out infinite;
+        }
+
+        .img-zoom {
+            transition: transform 1.2s ease, filter 0.8s ease;
+        }
+        .group:hover .img-zoom {
+            transform: scale(1.1);
+            filter: brightness(1.15);
+        }
+
+        /* Sparkle animation */
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .sparkle {
+            animation: sparkle 3s infinite;
+        }
+
+        .sparkle-1 { animation-delay: 0s; }
+        .sparkle-2 { animation-delay: 1s; }
+        .sparkle-3 { animation-delay: 2s; }
+
+        .price-tag {
+            background: linear-gradient(135deg, rgba(139, 95, 191, 0.3), rgba(212, 175, 55, 0.2), rgba(45, 212, 191, 0.3));
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .price-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero section */
+        .hero-section {
+            padding-top: 110px;
+            padding-bottom: 80px;
+        }
+        .section-title {
+            font-size: 3.5rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        .divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #D4AF37, #8B5FBF);
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #d1c4e9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .floating-element {
+            animation: floaty 6s ease-in-out infinite;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: wheat;
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            background: rgba(127, 90, 240, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .modal-close:hover {
+            background: rgba(127, 90, 240, 1);
+            transform: scale(1.1);
+        }
+        
+        .modal-caption {
+            text-align: center;
+            margin-top: 20px;
+            color: #a7a9be;
+            font-size: 16px;
+            background: rgba(15, 14, 23, 0.8);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(127, 90, 240, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .modal-close {
+                top: -40px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .modal-content {
+                max-width: 95%;
+            }
+            
+            .modal-caption {
+                font-size: 14px;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head> 
+<body class="min-h-screen ">
+
+    <div class="particles-container" id="particles-container"></div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <button id="modalClose" class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="Full size image" class="modal-image">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-purple-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20 md:h-20 min-h-0" style="height: 105px;">
+            <!-- BRAND: allow shrink and truncation -->
+            <div class="flex items-center min-w-0">
+             
+              <img src="logo1.png" alt="Logo" class="h-20 w-20 object-contain flex-shrink-0 mr-1">
+              <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+             
+      
+                  
+                    <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+                   
+                  Tarot Tales By Rashmi
+          
+
+                </span>
+               
+
+      <span class="text-lg md:text-2xl glow-text text-right" 
+            style="font-family: 'Great Vibes', cursive; color: #FFD700; text-shadow: 0 0 8px #FFD700, 0 0 12px #FFEA00, 0 0 16px #FFE066;margin-right:8px;letter-spacing: 2px;">
+        Ray of Light
+      </span>
+
+              </div>
+            </div>
+      
+            <!-- DESKTOP LINKS -->
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-8">
+                  <a href="index.html" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                  <a href="index.html#about" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+          
+                  <div class="dropdown">
+                      <span class="nav-link text-purple-100 px-3 py-2 text-sm font-medium flex items-center cursor-pointer">
+                          Services
+                          <svg class="dropdown-arrow w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                          </svg>
+                      </span>
+                      <div class="dropdown-content">
+                          <a href="reading11.html">Readings</a>
+                          <a href="healing11.html">Healings</a>
+                          
+                          <!-- FLYOUT SUBMENU FOR LEARN -->
+                          <div class="flyout-item">
+                              <a href="#" class="flex justify-between items-center hover:bg-transparent">
+                                  Learn
+                              </a>
+                              <div class="flyout-menu">
+                                  <a href="learn_tarot_reading.html">Tarot Reading</a>
+                                  <a href="learn_reiki.html">Reiki Healing</a>
+                                  <a href="other_therapy.html">Other Therapy</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+          
+                  <a href="index.html#testimonials" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Testimonials</a>
+                  <a href="index.html#contact" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+              </div>
+          </div>
+      
+            <!-- HAMBURGER (always visible on small screens) -->
+            <div class="md:hidden flex-shrink-0">
+              <button id="mobile-menu-button" class="text-purple-300 hover:text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-black bg-opacity-90 hidden" style="margin-top:107px;">  
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Home</a>
+            <a href="index.html#about" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">About</a>
+
+            <div class="px-3 py-2">
+                <button id="mobile-services-button" class="w-full text-left text-purple-100 hover:text-white flex items-center justify-between">
+                    Services
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="mobile-services-menu" class="mt-2 pl-4 hidden">
+                    <a href="reading11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Readings</a>
+                    <a href="healing11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Healings</a>
+                    
+                    <div class="mt-0">
+                        <button id="mobile-learn-button" class="w-full text-left   px-3 py-2 text-purple-200 hover:text-white flex items-center justify-between">
+                            Learn
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-learn-menu" class="mt-2 pl-4 hidden">
+                            <a href="learn_tarot_reading.html" class="text-purple-300 hover:text-white block px-5 py-2 " onclick="toggleMobileMenu()">Tarot Reading</a>
+                            <a href="learn_reiki.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Reiki Healing</a>
+                            <a href="other_therapy.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Other Therapy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html#testimonials" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Testimonials</a>
+            <a href="index.html#contact" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+    <!--Hero section-->
+    <section class="hero-section px-4 sm:px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center"> 
+                <h1 class="section-title text-reveal">
+                    Reading Modalities
+                </h1>
+                <div class="divider floating-element"></div>
+                <p class="section-subtitle">
+                    Discover profound insights and guidance through our diverse range of divination services. 
+                    Each reading is tailored to provide clarity, direction, and spiritual connection.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Floating decorative elements -->
+        <div class="absolute top-20 left-10 w-10 h-10 rounded-full bg-yellow-400 opacity-20 floating-element" style="animation-delay: 0s;"></div>
+        <div class="absolute top-40 right-20 w-6 h-6 rounded-full bg-purple-500 opacity-30 floating-element" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 left-20 w-8 h-8 rounded-full bg-teal-400 opacity-25 floating-element" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- Services Section with New Cards -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Angelic / Oracle / Tarot Reading -->
+            <div data-aos="fade-up" class="gradient-border group card-hover">
+                <div class="card-inner flex flex-col h-full">
+                    <div class="card-image relative">
+                        <img src="angelictarotreading.jpeg" 
+                             alt="Angelic / Oracle / Tarot Reading" 
+                             class="img-zoom h-64 w-full object-cover"
+                             onclick="openImageModal('angelictarotreading.jpeg', 'Angelic / Oracle / Tarot Reading')"/>
+                        <!-- Floating sparkles -->
+                        <span class="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full sparkle sparkle-1"></span>
+                        <span class="absolute bottom-6 right-6 w-2 h-2 bg-purple-400 rounded-full sparkle sparkle-2"></span>
+                        <span class="absolute top-10 right-10 w-2 h-2 bg-teal-400 rounded-full sparkle sparkle-3"></span>
+                    </div>
+                    <div class="card-content flex flex-col justify-between flex-grow p-6">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-yellow-400 drop-shadow-lg mb-3">Angelic / Oracle / Tarot Reading</h2>
+                            <p class="text-purple-200 mb-2 leading-relaxed">
+                                Mainly used for General reading, Relationship/Marriage, Health, Spirituality, Job/Business/Finance.
+                            </p>
+                            <p class="text-purple-200 mb-2 leading-relaxed">
+                                The below are all forms of divination using cards:
+                            </p>
+                            <ul class="list-disc list-inside text-purple-200/90 space-y-2">
+                                <li><strong class="text-yellow-400">Tarot Cards:</strong> A deck of 78 cards with specific symbolism and meanings. I interpret the cards to provide insights into past, present, and future events.</li>
+                                <li><strong class="text-purple-400">Oracle Cards:</strong> These decks with a variety of themes and messages. They are often more intuitive and less structured than tarot cards which provide messages from Universe.</li>
+                                <li><strong class="text-teal-400">Angelic Cards:</strong> A type of oracle reading that focuses on messages from angels or spirit guides.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-5 price-tag text-center">
+                            <p class="font-bold text-yellow-400 text-lg mb-1">Pricing</p>
+                            <p>999 Rs - 30 min | 1999 Rs - 60 min | 2499 Rs - Above 1 hr</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Astro Tarot Reading for family -->
+            <div data-aos="fade-up" data-aos-delay="100" class="gradient-border group card-hover">
+                <div class="card-inner flex flex-col h-full">
+                    <div class="card-image relative">
+                        <img src="img1.jpeg" 
+                             alt="Astro Tarot Reading for family" 
+                             class="img-zoom h-64 w-full object-cover"
+                             onclick="openImageModal('img1.jpeg', 'Astro Tarot Reading for family')"/>
+                        <!-- Floating sparkles -->
+                        <span class="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full sparkle sparkle-1"></span>
+                        <span class="absolute bottom-6 right-6 w-2 h-2 bg-purple-400 rounded-full sparkle sparkle-2"></span>
+                        <span class="absolute top-10 right-10 w-2 h-2 bg-teal-400 rounded-full sparkle sparkle-3"></span>
+                    </div>
+                    <div class="card-content flex flex-col justify-between flex-grow p-6">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-yellow-400 drop-shadow-lg mb-3">Astro Tarot Reading for Family</h2>
+                            <p class="text-purple-200 mb-2 leading-relaxed">
+                                This combines astrology and tarot. I use the birth charts of family members to get a deeper understanding of their personalities and relationships, and then use a tarot spread to provide specific insights and guidance.
+                            </p>
+                        </div>
+                        <div class="mt-5 price-tag text-center">
+                            <p class="font-bold text-yellow-400 text-lg mb-1">Pricing</p>
+                            <p>3499 Rs - Above 1 hr</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sand Reading -->
+            <div data-aos="fade-up" data-aos-delay="200" class="gradient-border group card-hover">
+                <div class="card-inner flex flex-col h-full">
+                    <div class="card-image relative">
+                        <img src="img3.jpeg" 
+                             alt="Sand Reading" 
+                             class="img-zoom h-64 w-full object-cover"
+                             onclick="openImageModal('img3.jpeg', 'Sand Reading')"/>
+                        <!-- Floating sparkles -->
+                        <span class="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full sparkle sparkle-1"></span>
+                        <span class="absolute bottom-6 right-6 w-2 h-2 bg-purple-400 rounded-full sparkle sparkle-2"></span>
+                        <span class="absolute top-10 right-10 w-2 h-2 bg-teal-400 rounded-full sparkle sparkle-3"></span>
+                    </div>
+                    <div class="card-content flex flex-col justify-between flex-grow p-6">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-yellow-400 drop-shadow-lg mb-3">Sand Reading</h2>
+                            <p class="text-purple-200 mb-2 leading-relaxed">
+                                Sand Reading is a form of fortune telling that involves interpretation of lines in sand to gain insights and guidance. I scatter sand on a surface and then read the resulting shapes and lines with my intuition.
+                            </p>
+                        </div>
+                        <div class="mt-5 price-tag text-center">
+                            <p class="font-bold text-yellow-400 text-lg mb-1">Pricing</p>
+                            <p>999 Rs - 30 min</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Candle Wax Reading -->
+            <div data-aos="fade-up" data-aos-delay="300" class="gradient-border group card-hover">
+                <div class="card-inner flex flex-col h-full">
+                    <div class="card-image relative">
+                        <img src="img2.jpeg" 
+                             alt="Candle Wax Reading" 
+                             class="img-zoom h-64 w-full object-cover"
+                             onclick="openImageModal('img2.jpeg', 'Candle Wax Reading')"/>
+                        <!-- Floating sparkles -->
+                        <span class="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full sparkle sparkle-1"></span>
+                        <span class="absolute bottom-6 right-6 w-2 h-2 bg-purple-400 rounded-full sparkle sparkle-2"></span>
+                        <span class="absolute top-10 right-10 w-2 h-2 bg-teal-400 rounded-full sparkle sparkle-3"></span>
+                    </div>
+                    <div class="card-content flex flex-col justify-between flex-grow p-6">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-yellow-400 drop-shadow-lg mb-3">Candle Wax Reading</h2>
+                            <p class="text-purple-200 mb-2 leading-relaxed">
+                                Candle Wax Reading is an ancient form of divination where I ask a question and light a candle, and allow it to burn down, then interpret the resulting wax drippings and formations to gain insight into emotions, events, or energies.
+                            </p>
+                        </div>
+                        <div class="mt-5 price-tag text-center">
+                            <p class="font-bold text-yellow-400 text-lg mb-1">Pricing</p>
+                            <p>999 Rs - 30 min</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dowsing -->
+            <div data-aos="fade-up" data-aos-delay="400" class="gradient-border group card-hover">
+                <div class="card-inner flex flex-col h-full">
+                    <div class="card-image relative">
+                        <img src="img4.jpeg" 
+                             alt="Dowsing" 
+                             class="img-zoom h-64 w-full object-cover"
+                             onclick="openImageModal('img4.jpeg', 'Dowsing')"/>
+                        <!-- Floating sparkles -->
+                        <span class="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full sparkle sparkle-1"></span>
+                        <span class="absolute bottom-6 right-6 w-2 h-2 bg-purple-400 rounded-full sparkle sparkle-2"></span>
+                        <span class="absolute top-10 right-10 w-2 h-2 bg-teal-400 rounded-full sparkle sparkle-3"></span>
+                    </div>
+                    <div class="card-content flex flex-col justify-between flex-grow p-6">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-yellow-400 drop-shadow-lg mb-3">Dowsing</h2>
+                            <p class="text-purple-200 mb-2 leading-relaxed">
+                                Pendulum techniques are used for seeking answers or information by interpreting the movements of a suspended pendulum. Common uses include divination, finding lost objects, healing, and yes-no answers.The pendulum acts as a tool to connect with the subconscious mind or a higher source of wisdom.
+                            </p>
+                        </div>
+                        <div class="mt-5 price-tag text-center">
+                            <p class="font-bold text-yellow-400 text-lg mb-1">Pricing</p>
+                            <p>499 Rs - 15 min</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional decorative card -->
+            <div data-aos="fade-up" data-aos-delay="500" class="gradient-border group card-hover">
+                <div class="card-inner flex flex-col h-full items-center justify-center p-8 text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-r from-yellow-400 to-purple-500 flex items-center justify-center mb-6">
+                        <i class="fas fa-star text-white text-3xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-yellow-400 drop-shadow-lg mb-3">Custom Reading</h2>
+                    <p class="text-purple-200 mb-4 leading-relaxed">
+                        Need a personalized reading that combines multiple modalities? Contact me for a custom session tailored to your specific needs and questions.
+                    </p>
+                    <button class="px-6 py-3 bg-gradient-to-r from-yellow-500 to-purple-600 rounded-full text-white font-bold hover:from-yellow-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                        Book Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="cta-section" data-aos="fade-up">
+                <h2 class="cta-title">Ready for Clarity?</h2>
+                <p class="cta-description">
+                    Book a reading today and gain profound insights into your life's journey. 
+                    Discover guidance, clarity, and direction through our specialized divination services.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-cinzel text-purple-300 mb-4">Tarot Tales By Rashmi</h3>
+                    <p class="text-purple-200">
+                        Providing intuitive tarot readings to help you navigate life's journey with clarity and confidence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-purple-200 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-purple-200 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#readings" class="text-purple-200 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#testimonials" class="text-purple-200 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-purple-200 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Reading Hours</h3>
+                    <ul class="space-y-2 text-purple-200">
+                        <li class="flex justify-between"><span>Monday - Friday</span> <span>10am - 8pm</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>11am - 6pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
+                    <p class="text-purple-200 mb-4">
+                        Subscribe for monthly tarot insights and special offers.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-black bg-opacity-50 border border-purple-800 rounded-l-md px-4 py-2 text-white focus:outline-none w-full">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-purple-200 mb-4 md:mb-0">
+                    &copy; 2025 Tarot Tales By Rashmi. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <div class="back-to-top  w-16 h-16 bg-purple-600 hover:bg-white-700 rounded-full flex items-center justify-center text-white shadow-lg transform transition duration-300 hover:scale-110">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Mobile services menu functionality
+        document.getElementById('mobile-services-button').addEventListener('click', function() {
+            const mobileServicesMenu = document.getElementById('mobile-services-menu');
+            mobileServicesMenu.classList.toggle('hidden');
+        });
+
+        // Toggle mobile menu when button is clicked
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            toggleMobileMenu();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // toggle menu
+        mobileMenuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("show"); // toggle show class
+        });
+
+        // close menu when clicking any link inside it
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("show");
+                mobileServicesMenu.classList.remove("show");
+                mobileLearnMenu.classList.remove("show");
+            });
+        });
+
+        // close services submenu when link is clicked
+        document.querySelectorAll("#mobile-services-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+
+        // toggle services submenu inside mobile
+        const mobileServicesButton = document.getElementById("mobile-services-button");
+        const mobileServicesMenu = document.getElementById("mobile-services-menu");
+        const mobileLearnButton = document.getElementById("mobile-learn-button");
+        const mobileLearnMenu = document.getElementById("mobile-learn-menu");
+        if (mobileServicesButton) {
+            mobileServicesButton.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mobileServicesMenu.classList.toggle("show"); // toggle 'show' class instead of hidden
+            });
+        }
+
+        if (mobileLearnButton) {
+            mobileLearnButton.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mobileLearnMenu.classList.toggle("show");
+            });
+        }
+
+        // Create particle background
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Random delay
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+
+        // NEW: Image Modal Functionality
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const modalClose = document.getElementById('modalClose');
+        
+        function openImageModal(imageSrc, caption) {
+            modalImage.src = imageSrc;
+            modalCaption.textContent = caption;
+            imageModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+        
+        function closeImageModal() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+        
+        // Close modal when clicking the close button
+        modalClose.addEventListener('click', closeImageModal);
+        
+        // Close modal when clicking outside the image
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeImageModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                closeImageModal();
+            }
+        });
+
+        (function(){
+            emailjs.init("_Z4KNnjSnhivkvh72"); // replace with your actual Public Key
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            emailjs.sendForm('service_cbgel4l', 'template_kkddrkb', '#contact-form')
+                .then(function() {
+                    alert('Message sent successfully!');
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                    console.error('EmailJS error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
