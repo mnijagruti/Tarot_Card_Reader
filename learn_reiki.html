@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiki Healing | Luxury Energy Therapy</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+    
+        /* box-sizing + prevent page overflow */
+        *,
+        *::before,
+        *::after { box-sizing: border-box; }
+
+        html, body { overflow-x: hidden; }
+
+        /* ensure img/svg don't force width */
+        img, svg { max-width: 100%; height: auto; }
+
+        /* ensure flex children can shrink */
+        .min-w-0 { min-width: 0; }
+        .truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* slightly reduce header spacing on very small screens */
+        @media (max-width: 420px) {
+            nav .h-20 { height: 56px; } /* smaller nav height if needed */
+            .max-w-7xl { padding-left: 12px; padding-right: 12px; }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+      
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white;
+            color: #0f0e17;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        
+        .font-cinzel {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(127, 90, 240, 0.3);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #7f5af0, #d946ef);
+            margin: 0 auto;
+        }
+        
+        .screenshot-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: #1a1832;
+        }
+       
+        .screenshot-image {
+            width: 100%;
+            max-height: 500px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .screenshot-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 14, 23, 0.9);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot-container:hover .screenshot-overlay {
+            transform: translateY(0);
+        }
+        
+        .screenshot-footer {
+            padding: 12px 15px;
+            text-align: center;
+            font-style: italic;
+            border-top: 1px solid #2d2b42;
+            background: rgba(15, 14, 23, 0.8);
+        }
+        
+        .instagram-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .tarot-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .tarot-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 20px 25px -5px rgba(217, 70, 239, 0.2), 0 10px 10px -5px rgba(217, 70, 239, 0.1);
+        }
+        
+        .tarot-back {
+            background: radial-gradient(circle, #4a044e 0%, #19072d 100%);
+            border: 2px solid #7f5af0;
+        }
+        
+        .tarot-border {
+            border: 1px solid #7f5af0;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #7f5af0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* dropdown menues */
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+      
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(15, 14, 23, 0.98);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 1000;
+            border: 1px solid #7f5af0;
+            border-radius: 4px;
+            padding: 8px 0;
+            pointer-events: none;
+        }
+        
+        .dropdown-content a {
+            color: #d8b4fe;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #2d2b3a;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: rgba(127, 90, 240, 0.3);
+            color: #ffffff;
+            padding-left: 20px;
+        }
+            
+        /* FLYOUT SUBMENU */
+        .flyout-item {
+            position: relative;
+        }
+        
+        .flyout-menu {
+            display: none;
+            position: absolute;
+            top: -8px; /* Align with the top of parent dropdown */
+            left: 100%; /* Position to the right */
+            background-color: rgba(15, 14, 23, 0.98);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 1001; /* Higher than main dropdown */
+            border: 1px solid #7f5af0;
+            border-radius: 4px;
+            padding: 8px 0;
+            margin-left: 2px; /* Small gap from main menu */
+            pointer-events: none;
+        }
+        
+        .flyout-menu a {
+            color: #d8b4fe;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #2d2b3a;
+            transition: all 0.3s ease;
+        }
+        
+        .flyout-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .flyout-menu a:hover {
+            background-color: rgba(127, 90, 240, 0.3);
+            color: #ffffff;
+            padding-left: 20px;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+            opacity: 1;
+            pointer-events: auto; /* now links clickable */
+        }
+        
+        .flyout-item:hover .flyout-menu,
+        .flyout-item:focus-within .flyout-menu {
+            display: block;
+            pointer-events: auto;
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow,
+        .dropdown:focus-within .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+       
+        #mobile-menu {
+            display: none;
+            position: fixed;   /* Make it fixed so it stays visible anywhere */
+            top: 0;            /* Align to top of viewport */
+            left: 0;
+            right: 0;
+            bottom: 0;         /* Fill full height */
+            background-color: rgba(0,0,0,0.95);
+            z-index: 9999;     /* Above everything else */
+            overflow-y: auto;  /* Allow scrolling if menu is tall */
+            padding-top: 1px; /* Space below nav bar */
+            margin-top: 107px;
+        }
+        
+        #mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu.active {
+            display: block;
+            max-height: 500px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .lg\:grid-cols-2 { grid-template-columns: 1fr !important; }
+            .lg\:gap-12 { gap: 2rem !important; }
+            .text-4xl { font-size: 2.2rem !important; }
+            .text-6xl { font-size: 3rem !important; }
+            .hero-buttons { flex-direction: column; gap: 1rem; }
+            .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-grid, .services-grid, .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+            .hero-content { text-align: center; }
+            .section-heading { font-size: 2rem; }
+            
+            /* Mobile submenu */
+            #mobile-services-menu {
+                display: none; /* Hidden by default */
+                padding-left: 1rem; /* Indent submenu items */
+            }
+            
+            .dropdown-content {
+                display: none !important;
+            }
+            
+            #mobile-learn-menu {
+                display: none;
+                padding-left:1rem;
+            }
+
+            #mobile-services-menu.show {
+                display: block;
+            }  
+            
+            #mobile-learn-menu.show {
+                display: block;
+            }
+            
+            .dropdown-content, .flyout-menu {
+                display: none !important;
+            }
+            
+            #contact form input,
+            #contact form select,
+            #contact form textarea,
+            #contact form button { width: 100%; }
+            .hero img { width: 100%; height: auto; }
+        }
+
+        /* Reiki Healing Specific Styles */
+        :root {
+            --primary: #d4af37;
+            --secondary: #8b7355;
+            --accent: #f5e8c8;
+            --dark: #1a1a1a;
+            --light: #f8f5f0;
+        }
+        
+        .reiki-body {
+            background: linear-gradient(135deg, #0d0221, #3c0d5a, #5b0e7a);
+            color: #fffffe;
+        }
+        
+        .reiki-h1, .reiki-h2, .reiki-h3, .reiki-h4, .reiki-h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--light);
+        }
+        
+        .reiki-section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 0 auto;
+        }
+        
+        .luxury-border {
+            border-bottom: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .luxury-border::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background-color: var(--secondary);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(13, 2, 33, 0.9), rgba(60, 13, 90, 0.9), rgba(91, 14, 122, 0.9));
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .tarot-back {
+            background: radial-gradient(circle, #4a044e 0%, #19072d 100%);
+            border: 2px solid var(--primary);
+        }
+        
+        .symbol {
+            font-size: 3rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .symbol:hover {
+            transform: scale(1.2);
+            color: var(--accent);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn-luxury {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .btn-luxury:hover::before {
+            left: 100%;
+        }
+        
+        .btn-luxury:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .course-card {
+            background: rgba(26, 26, 26, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            height: 100%;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary);
+        }
+        
+        .feature-icon:hover {
+            transform: rotate(15deg);
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .course-content {
+            padding: 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .course-details {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .course-description {
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        
+        .learn-more-btn {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            text-align: center;
+        }
+        
+        .learn-more-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* Enhanced Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.4s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a0b2e, #2d1b47);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--primary);
+            color: var(--light);
+            overflow: hidden;
+            animation: modalSlideIn 0.5s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from { 
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .modal-header h2 {
+            color: var(--dark);
+            margin: 0;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .learn-list {
+            columns: 2;
+            gap: 20px;
+        }
+        
+        .modal-section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-section:hover {
+            border-bottom-color: var(--primary);
+        }
+        
+        .guide-item {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 2px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .guide-item:hover {
+            padding-left: 20px;
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .modal-footer {
+            padding: 20px 30px;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .course-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-item {
+            flex: 1;
+            min-width: 150px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            background: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .highlight-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .highlight-label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .highlight-value {
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        @media (max-width: 768px) {
+            .learn-list {
+                columns: 1;
+            }
+            
+            .course-header {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .course-details {
+                margin-top: 10px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+            
+            .course-highlights {
+                flex-direction: column;
+            }
+            
+            .course-header h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0;
+            }
+            
+            .price-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .course-details {
+                gap: 10px;
+            }
+            
+            .detail-item {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .course-header {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .course-header h3 {
+                font-size: 1.1rem;
+            }
+            
+            .price-tag {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+            
+            .course-details {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced hover effects for cards */
+        .course-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        
+        /* Enhanced button animations */
+        .btn-luxury {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Text selection styling */
+        ::selection {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* Loading animation for modal */
+        .modal-loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Enrollment Form Styles */
+        .enroll-btn {
+            background: linear-gradient(90deg, #FFD700, #FFEA00);
+            color: #0d0221;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .enroll-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .enroll-btn:hover::before {
+            left: 100%;
+        }
+
+        .enroll-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Modal Styles for Enrollment Form */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .enrollment-modal-content {
+            background: linear-gradient(145deg, #1a1832, #2d2b42);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 1.5rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .enrollment-modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+            color: #fff;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #d8b4fe;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(15, 14, 23, 0.7);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 0.5rem;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: rgba(216, 180, 254, 0.5);
+        }
+
+        .required::after {
+            content: " *";
+            color: #f87171;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #FFD700, #FFEA00);
+            color: #0d0221;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @media (max-width: 640px) {
+            .enrollment-modal-content {
+                padding: 1.5rem;
+            }
+        }
+        
+    </style>
+</head> 
+<body class="min-h-screen reiki-body">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-purple-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20 md:h-20 min-h-0" style="height: 105px;">
+            <!-- BRAND: allow shrink and truncation -->
+            <div class="flex items-center min-w-0">
+              <img src="logo1.png" alt="Logo" class="h-20 w-20 object-contain flex-shrink-0 mr-1">
+              <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+                <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+                    Tarot Tales By Rashmi
+                </span>
+                <span class="text-lg md:text-2xl glow-text text-right" 
+                      style="font-family: 'Great Vibes', cursive; color: #FFD700; text-shadow: 0 0 8px #FFD700, 0 0 12px #FFEA00, 0 0 16px #FFE066;margin-right:8px;letter-spacing: 2px;">
+                  Ray of Light
+                </span>
+              </div>
+            </div>
+      
+            <!-- DESKTOP LINKS -->
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-8">
+                  <a href="index.html#home" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                  <a href="index.html#about" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+          
+                  <div class="dropdown">
+                      <span class="nav-link text-purple-100 px-3 py-2 text-sm font-medium flex items-center cursor-pointer">
+                          Services
+                          <svg class="dropdown-arrow w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                          </svg>
+                      </span>
+                      <div class="dropdown-content">
+                          <a href="reading11.html">Readings</a>
+                          <a href="healing11.html">Healings</a>
+                          
+                          <!-- FLYOUT SUBMENU FOR LEARN -->
+                          <div class="flyout-item">
+                              <a href="#" class="flex justify-between items-center hover:bg-transparent">
+                                  Learn
+                              </a>
+                              <div class="flyout-menu">
+                                  <a href="learn_tarot_reading.html">Tarot Reading</a>
+                                  <a href="learn_reiki.html">Reiki Healing</a>
+                                  <a href="other_therapy.html">Other Therapy</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+          
+                  <a href="index.html#testimonials" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Testimonials</a>
+                  <a href="index.html#contact" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+              </div>
+          </div>
+      
+            <!-- HAMBURGER (always visible on small screens) -->
+            <div class="md:hidden flex-shrink-0">
+              <button id="mobile-menu-button" class="text-purple-300 hover:text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-black bg-opacity-90 hidden" style="margin-top:107px;">  
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html#home" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Home</a>
+            <a href="index.html#about" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">About</a>
+    
+            <div class="px-3 py-2">
+                <button id="mobile-services-button" class="w-full text-left text-purple-100 hover:text-white flex items-center justify-between">
+                    Services
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="mobile-services-menu" class="mt-2 pl-4 hidden">
+                    <a href="reading11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Readings</a>
+                    <a href="healing11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Healings</a>
+                    
+                    <div class="mt-0">
+                        <button id="mobile-learn-button" class="w-full text-left   px-3 py-2 text-purple-200 hover:text-white flex items-center justify-between">
+                            Learn
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-learn-menu" class="mt-2 pl-4 hidden">
+                            <a href="learn_tarot_reading.html" class="text-purple-300 hover:text-white block px-5 py-2 " onclick="toggleMobileMenu()">Tarot Reading</a>
+                            <a href="learn_reiki.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Reiki Healing</a>
+                            <a href="other_therapy.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Other Therapy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <a href="index.html#testimonials" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Testimonials</a>
+            <a href="index.html#contact" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+    <!-- Reiki Healing Content -->
+    <div style="margin-top: 105px;">
+        <!-- Hero Section -->
+        <section class="relative py-20 overflow-hidden ">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div class="absolute top-10 left-10 floating-element">
+                    <i class="fas fa-circle symbol"></i>
+                </div>
+                <div class="absolute top-20 right-20 floating-element" style="animation-delay: 1s;">
+                    <i class="fas fa-star symbol"></i>
+                </div>
+                <div class="absolute bottom-20 left-20 floating-element" style="animation-delay: 2s;">
+                    <i class="fas fa-heart symbol"></i>
+                </div>
+                <div class="absolute bottom-10 right-10 floating-element" style="animation-delay: 3s;">
+                    <i class="fas fa-spa symbol"></i>
+                </div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 reiki-h1">Reiki Healing</h1>
+                        <p class="text-xl mb-8 text-gray-300">A luxurious journey into energy healing for mind, body, and spirit transformation.</p>
+                        <p class="text-lg mb-8">Reiki is a form of energy healing, originating from Japan, that uses gentle hand placements to transfer "universal life force energy" with the goal of promoting relaxation and supporting the body's natural self-healing processes.</p>
+                        <p class="text-lg mb-8 italic text-gold-300">In all reiki courses, distant Initiation/attunements will be sent energetically with Love by Rashmi.</p>
+                        <a href="#courses" class="btn-luxury inline-block">Explore Courses</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center fade-in" style="transition-delay: 0.3s;">
+                        <div class="relative">
+                            <div class="w-80 h-80 bg-gradient-to-br from-amber-100 to-amber-50 rounded-full flex items-center justify-center shadow-xl pulse-animation">
+                                <div class="w-64 h-64 bg-gradient-to-br from-amber-200 to-amber-100 rounded-full flex items-center justify-center">
+                                    <div class="w-48 h-48 bg-gradient-to-br from-amber-300 to-amber-200 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-hands text-6xl text-amber-700"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Reiki Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 reiki-h2">What is Reiki?</h2>
+                    <div class="reiki-section-divider mb-8"></div>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-8">Reiki is a gentle yet powerful Japanese healing technique that channels universal life force energy to promote balance, relaxation, and self-healing.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-heart text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 reiki-h3">Energy Healing</h3>
+                        <p class="text-gray-300">Channel universal life force energy through gentle hand placements to promote physical and emotional healing.</p>
+                    </div>
+                    
+                    <div class="text-center fade-in" style="transition-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-spa text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 reiki-h3">Deep Relaxation</h3>
+                        <p class="text-gray-300">Experience profound relaxation as Reiki helps release stress, tension, and energetic blockages.</p>
+                    </div>
+                    
+                    <div class="text-center fade-in" style="transition-delay: 0.4s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 reiki-h3">Self-Healing</h3>
+                        <p class="text-gray-300">Support your body's natural ability to heal itself and restore balance on all levels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 reiki-h2">Reiki Courses</h2>
+                    <div class="reiki-section-divider mb-8"></div>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-8">Discover our comprehensive range of Reiki courses, from beginner to master level.</p>
+                </div>
+                
+                <!-- Main Reiki Courses -->
+                <div  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 ">
+                    <!-- Reiki Level 1 -->
+                    <div class="course-card fade-in hover-glow" >
+                        <div class="course-content" >
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Reiki Level 1</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">2999 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Begin your transformative journey with Touch Therapy. Learn palm healing to channel universal life force energy.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="level1">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Reiki Level 2 -->
+                    <div class="course-card fade-in hover-glow" >
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Reiki Level 2</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Level 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">4499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Master distance healing and unlock sacred symbols. Become a more versatile healer.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="level2">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Reiki Level 3 -->
+                    <div class="course-card fade-in hover-glow">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Reiki Level 3</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Level 1 & 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">5499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Become a Reiki Master Teacher. Learn to guide others on their healing journeys.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online/In-person</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="level3">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Reiki Level 4 -->
+                    <div class="course-card fade-in hover-glow">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Reiki Level 4</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>2 days</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Level 1 & 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">10499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Reach Master Healer level with advanced techniques including crystal healing and past life regression.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="level4">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Karuna Reiki -->
+                    <div class="course-card fade-in hover-glow" >
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Karuna Reiki</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Level 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">4999 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Compassion-based healing with powerful symbols. Experience deeper emotional healing.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="karuna">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Angelic Reiki -->
+                    <div class="course-card fade-in hover-glow" >
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Angelic Reiki</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">5499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Connect with angelic energies for gentle yet powerful healing. Learn to work with archangels.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="angelic">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Specialized Courses -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Money Reiki -->
+                    <div class="course-card fade-in hover-glow" >
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Money Reiki</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">2499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Align your energy with wealth and abundance. Clear negative financial beliefs.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online/In-person</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="money">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Dolphin Reiki -->
+                    <div class="course-card fade-in hover-glow" >
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Dolphin Reiki</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">3499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Connect with dolphin energies for cosmic healing. Work with higher consciousness.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="dolphin">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Magic Reiki -->
+                    <div class="course-card fade-in hover-glow" >
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 reiki-h3">Magic Reiki</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">2499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Clear negative energies, curses, and spells. Learn protection techniques and space clearing.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="magic">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enrollment CTA Section -->
+                <div class="text-center mt-16 fade-in">
+                    <div class="max-w-2xl mx-auto">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 reiki-h2">Ready to Begin Your Reiki Journey?</h3>
+                        <p class="text-lg text-gray-300 mb-8">Enroll in any of our Reiki courses and start your transformation today.</p>
+                        <button id="enroll-button" class="enroll-btn text-black font-semibold py-3 px-8 rounded-full">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 gold-gradient opacity-90"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl mx-auto text-center text-dark fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 reiki-h2">Begin Your Reiki Journey Today</h2>
+                    <p class="text-xl mb-8">Experience the transformative power of Reiki healing and unlock your potential for balance, relaxation, and self-healing.</p>
+                    <button id="enroll-button-2" class="btn-luxury bg-dark text-gold hover:bg-gray-800 inline-block">Enroll Now</button>
+                </div>
+            </div>
+            
+            <!-- Floating elements -->
+            <div class="absolute top-10 left-10 floating-element">
+                <i class="fas fa-circle text-dark opacity-20 text-6xl"></i>
+            </div>
+            <div class="absolute bottom-10 right-10 floating-element" style="animation-delay: 2s;">
+                <i class="fas fa-star text-dark opacity-20 text-6xl"></i>
+            </div>
+        </section>
+
+        <!-- Course Detail Modals -->
+        <div id="courseModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Course Details</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="modalContent"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-luxury enroll-course-btn">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enrollment Form Modal -->
+        <div id="enrollment-modal" class="modal-overlay">
+            <div class="enrollment-modal-content">
+                <button class="close-modal" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-cinzel font-bold text-white mb-4">
+                        Enroll in <span class="highlight">Reiki Course</span>
+                    </h2>
+                    <div class="section-divider mb-4"></div>
+                    <p class="text-purple-200">
+                        Begin your journey into the mystical world of Reiki. Fill out the form below to enroll.
+                    </p>
+                </div>
+                
+                <form id="enrollment-form">
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullName" class="form-label required">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            class="form-input"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Mobile Number -->
+                    <div class="form-group">
+                        <label for="mobile" class="form-label required">Mobile Number</label>
+                        <input 
+                            type="tel" 
+                            id="mobile" 
+                            name="mobile" 
+                            class="form-input"
+                            placeholder="Enter your mobile number"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input"
+                            placeholder="Enter your email address (optional)"
+                        >
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <i class="fab fa-whatsapp"></i> Send to WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <div class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-cinzel text-purple-300 mb-4">Tarot Tales By Rashmi</h3>
+                    <p class="text-purple-200">
+                        Providing intuitive tarot readings to help you navigate life's journey with clarity and confidence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-purple-200 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-purple-200 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#readings" class="text-purple-200 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#testimonials" class="text-purple-200 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-purple-200 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Reading Hours</h3>
+                    <ul class="space-y-2 text-purple-200">
+                        <li class="flex justify-between"><span>Monday - Friday</span> <span>10am - 8pm</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>11am - 6pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
+                    <p class="text-purple-200 mb-4">
+                        Subscribe for monthly tarot insights and special offers.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-black bg-opacity-50 border border-purple-800 rounded-l-md px-4 py-2 text-white focus:outline-none w-full">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-purple-200 mb-4 md:mb-0">
+                    &copy; 2025 Tarot Tales By Rashmi. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Mobile services menu functionality
+        document.getElementById('mobile-services-button').addEventListener('click', function() {
+            const mobileServicesMenu = document.getElementById('mobile-services-menu');
+            mobileServicesMenu.classList.toggle('hidden');
+        });
+
+        // Toggle mobile menu when button is clicked
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            toggleMobileMenu();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // toggle menu
+        mobileMenuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("show"); // toggle show class
+        });
+
+        // close menu when clicking any link inside it
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("show");
+                mobileServicesMenu.classList.remove("show");
+                mobileLearnMenu.classList.remove("show");
+            });
+        });
+
+        // close services submenu when link is clicked
+        document.querySelectorAll("#mobile-services-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+
+        // toggle services submenu inside mobile
+        const mobileServicesButton = document.getElementById("mobile-services-button");
+        const mobileServicesMenu = document.getElementById("mobile-services-menu");
+        const mobileLearnButton = document.getElementById("mobile-learn-button");
+        const mobileLearnMenu = document.getElementById("mobile-learn-menu");
+        
+        if (mobileServicesButton) {
+            mobileServicesButton.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mobileServicesMenu.classList.toggle("show"); // toggle 'show' class instead of hidden
+            });
+        }
+
+        if (mobileLearnButton) {
+            mobileLearnButton.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mobileLearnMenu.classList.toggle("show");
+            });
+        }
+        
+        (function(){
+            emailjs.init("_Z4KNnjSnhivkvh72"); // replace with your actual Public Key
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            emailjs.sendForm('service_cbgel4l', 'template_kkddrkb', '#contact-form')
+                .then(function() {
+                    alert('Message sent successfully!');
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                    console.error('EmailJS error:', error);
+                });
+        }
+
+        // Reiki Page Specific JavaScript
+        // Fade in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Modal functionality
+            const modal = document.getElementById('courseModal');
+            const closeBtn = document.querySelector('.close-modal');
+            const modalContent = document.getElementById('modalContent');
+            const modalTitle = document.getElementById('modalTitle');
+            const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+            
+            // Course data
+            const courseData = {
+                level1: {
+                    title: "Reiki Level 1 – Touch therapy",
+                    duration: "1 day",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "2999 Rs",
+                    description: "Reiki Level 1 marks the beginning of a transformative journey, offering the potential for profound positive changes in your life. Also known as Touch Therapy, this level teaches you palm healing: channelling universal life force energy for physical, emotional, and psychological healing. Reiki often enters your life at the perfect moment. Embarking on your Reiki path can boost self-confidence, help you face fears, and unlock your full potential. Reiki encourages a positive outlook and empowers you to see life from a fresh perspective.",
+                    guide: [
+                        "Foundations of Reiki: Explore the history, principles, and benefits of this gentle healing practice.",
+                        "Energy Systems: Learn about the chakras (energy centers), their associated organs, and how imbalances can contribute to disharmony.",
+                        "The Attunement: Receive a special attunement connecting you to Universal Life Force Energy, empowering you to channel Reiki for healing.",
+                        "Hands-on Healing: Discover how to heal yourself and others through the touch of your palms.",
+                        "21-Day Cleansing: Commit to a 21-day self-healing practice to release negativity and promote deep inner cleansing."
+                    ],
+                    benefits: [
+                        "Enhanced Well-being: Experience physical, emotional, and mental healing as Reiki detoxifies and renews.",
+                        "Personal Growth: Find deeper insight, balance, and an increased ability to manage life's challenges.",
+                        "Positive Impact: Uplift the well-being of yourself, loved ones, and those around you through your growing healing powers."
+                    ],
+                    learn: [
+                        "The History and Origins of Reiki and its applications",
+                        "Introduction to anatomy, body systems and chakras",
+                        "Full body Reiki treatment to self and others",
+                        "The Reiki Principles",
+                        "Reiki 1 Attunement",
+                        "Reiki every day uses"
+                    ]
+                },
+                level2: {
+                    title: "Reiki Level 2 – Distance healing",
+                    duration: "1 day",
+                    eligibility: "Reiki Level 1",
+                    format: "Online",
+                    price: "4499 Rs",
+                    description: "Reiki Level 2 builds upon the foundation established in Level 1, empowering you to become a more confident and versatile healer. This level unlocks the secrets of distant healing, allowing you to send Reiki energy across space and time to support loved ones or anyone in need, regardless of location. Reiki Level 2 empowers you to become a more powerful and versatile healer, expanding your practice in exciting ways.",
+                    sections: [
+                        {
+                            title: "Deepen Your Reiki Connection",
+                            items: [
+                                "Unlock the Secrets of Symbols: Receive attunements to the first 3 Reiki symbols, each with unique properties to enhance your healing abilities. Learn how to use these symbols to focus and amplify Reiki energy for specific purposes.",
+                                "Master Distance Healing: Send Reiki energy across space and time! Offer healing support to loved ones near or far, regardless of location."
+                            ]
+                        },
+                        {
+                            title: "Empower Your Healing Practice",
+                            items: [
+                                "Advanced Self-Healing Techniques: Utilize the Reiki symbols and techniques to address deeper energetic blockages and promote greater emotional and mental well-being.",
+                                "Expand Your Healing Potential: Learn diverse techniques like sending Reiki to past or future events, directing it towards specific goals, and using the 'Reiki box' for group healing."
+                            ]
+                        },
+                        {
+                            title: "Experience Personal Growth",
+                            items: [
+                                "Strengthen Your Intuition: As your energetic connection deepens, so does your ability to sense subtle energy imbalances. Gain deeper insights to continue your personal growth journey.",
+                                "Enhance Your Well-being: Strengthen and cleanse your aura, bless food and drink, and remove negative energy from your home – all with the power of Reiki."
+                            ]
+                        }
+                    ],
+                    learn: [
+                        "Three Reiki Symbols, and their basic use",
+                        "The various techniques of sending Reiki healing over a distance",
+                        "How to ground yourself",
+                        "Handling multiple issues / Reiki box",
+                        "Second degree Reiki Attunement",
+                        "Healing past incidents, Programming future events",
+                        "Space clearing with Reiki",
+                        "Aura strengthening, Aura cleaning",
+                        "Using Reiki for protection"
+                    ]
+                },
+                level3: {
+                    title: "Reiki Level 3 – Teacher Level",
+                    duration: "1 day",
+                    eligibility: "Reiki Level 1 & 2",
+                    format: "Online/In-person",
+                    price: "5499 Rs",
+                    description: "Have you discovered the profound healing power of Reiki and feel called to share this gift with others? Reiki Master Teacher – equips you with the knowledge and skills to become a confident and inspiring guide on their Reiki journeys.",
+                    sections: [
+                        {
+                            title: "Empower New Healers",
+                            items: [
+                                "Reiki Teacher Training: Master the art of teaching Reiki. Learn the duties, responsibilities, and best practices for nurturing and guiding new Reiki students.",
+                                "Attunement Ceremonies: Gain the ability to initiate others into Reiki Levels 1 and 2, empowering them to channel Reiki's healing energy."
+                            ]
+                        },
+                        {
+                            title: "Expand Your Healing Horizons",
+                            items: [
+                                "Advanced Master Symbol: Receive an additional Master symbol specifically designed for attunements, further enriching your teaching practice.",
+                                "Crystal Dowsing Techniques: Explore the art of crystal dowsing, learning to use crystals for various purposes, including daily life applications and enhancing your healing sessions."
+                            ]
+                        },
+                        {
+                            title: "Deepen Your Understanding",
+                            items: [
+                                "Chakras and Meditation: Delve deeper into the chakra system, learning how to utilize meditation practices to balance energy centers and promote overall well-being.",
+                                "Psychic Therapy: Explore the realm of psychic therapy, gaining tools to help others release negative emotions trapped within the body, potentially manifesting as physical issues."
+                            ]
+                        },
+                        {
+                            title: "Become a Well-Rounded Teacher",
+                            items: [
+                                "Student Psychology: Understand student behavioural patterns and expectations, allowing you to tailor your teaching approach for optimal learning experiences.",
+                                "Building Confidence: Develop the skills and confidence to effectively share your knowledge and guide students on their unique Reiki paths."
+                            ]
+                        }
+                    ],
+                    learn: [
+                        "The Attunement Processes for Reiki Levels 1 and 2",
+                        "Psychic Therapy",
+                        "Healing through dowsing",
+                        "Reiki chakra meditation",
+                        "Dowsing",
+                        "Attunement for Reiki Master Teacher Level"
+                    ]
+                },
+                level4: {
+                    title: "Reiki Level 4 – Master Healer",
+                    duration: "2 days",
+                    eligibility: "Reiki Level 1 & 2",
+                    format: "Online",
+                    price: "10499 Rs",
+                    description: "Reiki Level 1 and 2 ignited your healing journey. Now, Reiki Master Healer – empowers you to reach a whole new level of spiritual and energetic connection. This advanced training isn't just about increasing your healing power; it's a transformative experience that deepens your connection to the divine and unlocks your full potential as a healer.",
+                    sections: [
+                        {
+                            title: "Embrace Mastery",
+                            items: [
+                                "Master Symbol Attunement: Receive the powerful Master symbol, a key to unlocking profound healing potential for yourself and others.",
+                                "Heightened Spiritual Awareness: This level intensifies your sensitivity to metaphysical experiences, opening you to higher vibrations and accelerating your spiritual growth."
+                            ]
+                        },
+                        {
+                            title: "Deepen Your Healing Repertoire",
+                            items: [
+                                "Crystal Healing Knowledge: Master the art of working with crystals. Learn their unique healing properties and diverse uses, empowering you to integrate them seamlessly with your Reiki practice.",
+                                "Crystal Grid Techniques: Discover how to create and utilize crystal grids to channel Reiki and crystal energy 24/7 for specific healing purposes.",
+                                "Past Life Regression Therapy: Explore past life experiences that may be impacting your present well-being. Gain valuable insights and facilitate deeper healing on a soul level."
+                            ]
+                        },
+                        {
+                            title: "Become a More Effective Healer",
+                            items: [
+                                "Advanced Self-Healing Techniques: Refine your skills for profound self-healing, addressing energetic blockages on a deeper level and promoting your own spiritual growth.",
+                                "Enhanced Intuition: As your connection to the universe expands, so does your ability to sense subtle energy imbalances, allowing you to offer more intuitive and personalized healing sessions."
+                            ]
+                        }
+                    ],
+                    learn: [
+                        "Master symbol",
+                        "Past regression exercise",
+                        "Grid making",
+                        "Colours to all symbols",
+                        "Crystal Therapy",
+                        "Attunement for Reiki Teacher level",
+                        "Crystal uses",
+                        "In-depth Crystal knowledge",
+                        "Understanding different crystals"
+                    ]
+                },
+                karuna: {
+                    title: "Karuna Reiki",
+                    duration: "1 day",
+                    eligibility: "Reiki Level 1",
+                    format: "Online",
+                    price: "4999 Rs",
+                    description: "Karuna Reiki is a type of healing that is based on the principles of compassion, love, and empathy. Practitioners of Karuna Reiki attempt to become one with the receiver for a smooth transmission of positive energy. The Karuna Reiki Healing was developed by Reiki Master William L. Rand. The symbols were channelled by Several other Reiki Masters. Mr. William meditated on those symbols and was guided to develop the attunement process and to call the new system Karuna Reiki. Karuna Reiki healing energy is different that Usui Reiki and in fact, most student find it more powerful than Usui Reiki. The energy has a more definite feeling to it and works on all the energy bodies at the same time.",
+                    learn: [
+                        "Different more than 9 Karuna Reiki symbols. (How? Where? to use)",
+                        "How to do deep Emotional Healing process to release deep-rooted emotional traumas and pain, promoting inner peace and well-being.",
+                        "How to enhance your ability to offer and receive compassionate healing for yourself and others.",
+                        "How to increase spiritual growth to accelerate your spiritual development and connection with the divine through higher vibrational energies.",
+                        "How to clear energetic blockages to remove negative energies and blockages from the body and aura to restore balance and harmony.",
+                        "Enhanced Intuition power to strengthen your intuitive abilities and spiritual awareness, allowing for better guidance in healing practices.",
+                        "Healing of the Heart to focus on heart-centered healing to foster love, empathy, and forgiveness."
+                    ]
+                },
+                angelic: {
+                    title: "Angelic Reiki",
+                    duration: "1 day",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "5499 Rs",
+                    description: "Angelic Reiki, channelled by Archangel Metatron through Kevin Core, was introduced about 20 years ago and has since become a powerful healing modality used worldwide. It combines the Usui and Shamballa lineages with angelic transmissions, allowing practitioners to be attuned to the angels and their healing frequencies. The energy is gentle yet powerful, holding the frequency of the angels while providing a profound healing experience for both the recipient and the practitioner.",
+                    learn: [
+                        "The principles of Angel Reiki and how it differs from traditional Reiki. How to create a sacred space and set powerful intentions for healing.",
+                        "The benefits of working with Angelic energy for healing on physical, emotional, and spiritual levels.",
+                        "How to communicate with angels and understand their messages. Techniques for connecting with Archangels and other angelic beings.",
+                        "Guided meditations to strengthen intuition and deepen the connection with the angelic realm.",
+                        "The sacred symbols used in Angel Reiki for healing, protection, and spiritual growth. How to channel angelic energy for powerful healing sessions.",
+                        "How to use Angel Reiki to release emotional blockages, heal past trauma, and foster emotional well-being.",
+                        "Techniques for spiritual healing, clearing energetic attachments, and accessing divine wisdom.",
+                        "How to prepare and offer Angel Reiki attunements to others. The skills needed to teach and guide others in their own Angel Reiki journeys.",
+                        "Integrating Angel Reiki into your daily life for personal growth, manifestation, and spiritual development."
+                    ]
+                },
+                money: {
+                    title: "Money Reiki",
+                    duration: "1 day",
+                    eligibility: "Beginner",
+                    format: "Online/In-person",
+                    price: "2499 Rs",
+                    description: "A Money Reiki course teaches energy healing techniques to align your energy with wealth and abundance, clear negative financial beliefs, and attract positive financial opportunities.",
+                    learn: [
+                        "At the end of this course, you will become a Money Reiki Practitioner",
+                        "You will be able to treat your relationship with money, but you will succeed in doing the same to other people and to the whole world.",
+                        "You will learn a new technique that will enhance your skills in the holistic field, helping you become an expert in the sector"
+                    ]
+                },
+                dolphin: {
+                    title: "Dolphin Reiki",
+                    duration: "1 day",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "3499 Rs",
+                    description: "Dolphins are the highest evolved beings on earth, and their healing energy can transcend time and space. Also, they have the ability to communicate on a higher level. They have come from the Sirius solar system and the Pleadians. Dolphin healing uses sound as well as the usual light vibration we use in Reiki and other forms of healing. Their energy moves in pulse waves, unlike traditional Reiki which is a static constant movement.",
+                    learn: [
+                        "Dolphin energy is unique in that it does not just heal the spiritual human body, but it works on your higher level within the cosmos associated with your soul or Higher Self.",
+                        "How it uses cosmic energy to heal karma and emotional damage so the soul can evolve.",
+                        "How dolphin reiki is able to help children with special needs, giving these children healing.",
+                        "They have a universal appeal, symbolising freedom, joy, grace and serenity, uplifting the spirits of all who come in contact with them.",
+                        "Learning different symbols : The Wholeness symbol, which brings the person's soul, higher self, mental and physical body into alignment; the Cosmos symbol, which represents Universe energy above and solid energy below, drawing in the energy of the Higher Realms, your guides, angels, the universe and the cosmos; the Source symbol, which represents Source embracing but dividing good and bad, light and dark, enabling enlightenment."
+                    ]
+                },
+                magic: {
+                    title: "Magic Reiki",
+                    duration: "1 day",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "2499 Rs",
+                    description: "Elena Sarovskaya founded Magic Reiki in 2008. Magic Reiki basically deals with the energies of ghosts, black magic, spells, curses, exorcism etc. It is programmed to eliminate and heal all the negative effects of such dark energies.",
+                    learn: [
+                        "How to removes all negative programs from client's informational field that is related to curse, evil eye, spells etc.",
+                        "How to cleanses any objects and space.",
+                        "It removes residues of the 'evil person' who was in the room by detecting all negative spells, evil eye implemented on person, space, any substance food or objects.",
+                        "How to purify solar plexus from all negative vibes with the intention.",
+                        "How to connect to your Higher-self and activate the flow of Magic Reiki using the Pentagram symbol.",
+                        "How to draw the symbol on the roof of your mouth and blow forcefully on the desired place/person/object with the intention to remove all negativity.",
+                        "To create protection, send pentagram symbol with Magic Reiki to client's heart chakra.",
+                        "To cleanse the negative past situation",
+                        "The Pentagram symbol can be used to delete active negative programs from the past, guides lost soul to other world and to remove Exorcism."
+                    ]
+                }
+            };
+            
+            // Open modal on button click
+            learnMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const courseId = this.getAttribute('data-course');
+                    const course = courseData[courseId];
+                    
+                    if (course) {
+                        // Show loading state
+                        modalContent.innerHTML = `
+                            <div class="modal-loading">
+                                <div class="spinner"></div>
+                            </div>
+                        `;
+                        
+                        modal.style.display = 'block';
+                        modalTitle.textContent = course.title;
+                        
+                        // Simulate loading delay for better UX
+                        setTimeout(() => {
+                            let sectionsHTML = '';
+                            
+                            // Course highlights
+                            sectionsHTML += `
+                                <div class="course-highlights">
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="highlight-label">Duration</div>
+                                        <div class="highlight-value">${course.duration}</div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-user-graduate"></i>
+                                        </div>
+                                        <div class="highlight-label">Eligibility</div>
+                                        <div class="highlight-value">${course.eligibility}</div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                        <div class="highlight-label">Format</div>
+                                        <div class="highlight-value">${course.format}</div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-tag"></i>
+                                        </div>
+                                        <div class="highlight-label">Price</div>
+                                        <div class="highlight-value">${course.price}</div>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            if (course.guide) {
+                                sectionsHTML += `
+                                    <div class="modal-section">
+                                        <h4 class="text-lg font-semibold mb-3 text-yellow-400">In this course, a Reiki Master Teacher will guide you through:</h4>
+                                        <div class="space-y-3">
+                                            ${course.guide.map(item => `<div class="guide-item">${item}</div>`).join('')}
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            if (course.sections) {
+                                course.sections.forEach(section => {
+                                    sectionsHTML += `
+                                        <div class="modal-section">
+                                            <h4 class="text-lg font-semibold mb-3 text-yellow-400">${section.title}</h4>
+                                            <div class="space-y-3">
+                                                ${section.items.map(item => `<div class="guide-item">${item}</div>`).join('')}
+                                            </div>
+                                        </div>
+                                    `;
+                                });
+                            }
+                            
+                            if (course.benefits) {
+                                sectionsHTML += `
+                                    <div class="modal-section">
+                                        <h4 class="text-lg font-semibold mb-3 text-yellow-400">Benefits:</h4>
+                                        <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                                            ${course.benefits.map(item => `<li>${item}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                `;
+                            }
+                            
+                            modalContent.innerHTML = `
+                                <div class="modal-section">
+                                    <p class="text-gray-300 mb-6">${course.description}</p>
+                                </div>
+                                
+                                ${sectionsHTML}
+                                
+                                <div class="modal-section">
+                                    <h4 class="text-lg font-semibold mb-3 text-yellow-400">What You'll Learn:</h4>
+                                    <ul class="learn-list list-disc pl-5 text-gray-300 space-y-2">
+                                        ${course.learn.map(item => `<li>${item}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            `;
+                        }, 500);
+                    }
+                });
+            });
+            
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Enrollment Form Functionality
+            const enrollButton = document.getElementById('enroll-button');
+            const enrollButton2 = document.getElementById('enroll-button-2');
+            const closeModalBtn = document.getElementById('close-modal');
+            const enrollmentModal = document.getElementById('enrollment-modal');
+            const form = document.getElementById('enrollment-form');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Open modal when enroll buttons are clicked
+            enrollButton.addEventListener('click', () => {
+                enrollmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            enrollButton2.addEventListener('click', () => {
+                enrollmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            // Close modal when X is clicked
+            closeModalBtn.addEventListener('click', () => {
+                enrollmentModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside the content
+            enrollmentModal.addEventListener('click', (e) => {
+                if (e.target === enrollmentModal) {
+                    enrollmentModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // WhatsApp integration function
+            function sendToWhatsApp(formData) {
+                // WhatsApp phone number
+                const phoneNumber = "918956259430";
+                
+                // Format the message with proper encoding for WhatsApp
+                let message = encodeURIComponent(` *REIKI COURSE ENROLLMENT REQUEST* 
+
+ *Student Details:*
+────────────────
+ *Full Name:* ${formData.fullName}
+ *Mobile:* ${formData.mobile}
+ *Email:* ${formData.email || 'Not Provided'}
+
+ *Course Interest:*
+────────────────
+ *Interested in:* Reiki Healing Courses
+ *Message:* I'm interested in learning more about your Reiki courses and would like to enroll.
+
+ *Looking forward to starting my Reiki journey!* `);
+
+                // Create WhatsApp URL
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                
+                // Show loading state
+                submitBtn.innerHTML = '<div class="loading-spinner"></div> Preparing WhatsApp...';
+                submitBtn.disabled = true;
+                
+                // Open WhatsApp directly after a short delay
+                setTimeout(() => {
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Reset form and close modal
+                    setTimeout(() => {
+                        form.reset();
+                        enrollmentModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                        
+                        // Reset button state
+                        submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Send to WhatsApp';
+                        submitBtn.disabled = false;
+                    }, 1000);
+                }, 1500);
+            }
+
+            // Form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simple validation
+                const fullName = document.getElementById('fullName').value.trim();
+                const mobile = document.getElementById('mobile').value.trim();
+                const email = document.getElementById('email').value.trim();
+                
+                if (!fullName) {
+                    alert('Please enter your full name');
+                    document.getElementById('fullName').focus();
+                    return;
+                }
+                
+                if (!mobile) {
+                    alert('Please enter your mobile number');
+                    document.getElementById('mobile').focus();
+                    return;
+                }
+                
+                // Validate mobile number format
+                const mobileRegex = /^[0-9]{10}$/;
+                if (!mobileRegex.test(mobile)) {
+                    alert('Please enter a valid 10-digit mobile number');
+                    document.getElementById('mobile').focus();
+                    return;
+                }
+                
+                // Collect form data
+                const formData = {
+                    fullName,
+                    mobile,
+                    email
+                };
+                
+                // Send to WhatsApp
+                sendToWhatsApp(formData);
+            });
+
+            // Prevent form submission on Enter key
+            form.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                }
+            });
+
+            // Add enroll button to course modal
+            document.querySelectorAll('.enroll-course-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    enrollmentModal.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
