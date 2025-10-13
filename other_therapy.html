@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Modalities | Tarot Tales By Rashmi</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+    
+        /* box-sizing + prevent page overflow */
+        *,
+        *::before,
+        *::after { box-sizing: border-box; }
+
+        html, body { overflow-x: hidden; }
+
+        /* ensure img/svg don't force width */
+        img, svg { max-width: 100%; height: auto; }
+
+        /* ensure flex children can shrink */
+        .min-w-0 { min-width: 0; }
+        .truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* slightly reduce header spacing on very small screens */
+        @media (max-width: 420px) {
+            nav .h-20 { height: 56px; } /* smaller nav height if needed */
+            .max-w-7xl { padding-left: 12px; padding-right: 12px; }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+      
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white;
+            color: #0f0e17;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        
+        .font-cinzel {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(127, 90, 240, 0.3);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #7f5af0, #d946ef);
+            margin: 0 auto;
+        }
+        
+        .screenshot-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: #1a1832;
+        }
+       
+        .screenshot-image {
+            width: 100%;
+            max-height: 500px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .screenshot-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 14, 23, 0.9);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot-container:hover .screenshot-overlay {
+            transform: translateY(0);
+        }
+        
+        .screenshot-footer {
+            padding: 12px 15px;
+            text-align: center;
+            font-style: italic;
+            border-top: 1px solid #2d2b42;
+            background: rgba(15, 14, 23, 0.8);
+        }
+        
+        .instagram-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .tarot-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .tarot-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 20px 25px -5px rgba(217, 70, 239, 0.2), 0 10px 10px -5px rgba(217, 70, 239, 0.1);
+        }
+        
+        .tarot-back {
+            background: radial-gradient(circle, #4a044e 0%, #19072d 100%);
+            border: 2px solid #7f5af0;
+        }
+        
+        .tarot-border {
+            border: 1px solid #7f5af0;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #7f5af0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* dropdown menues */
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+      
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(15, 14, 23, 0.98);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 1000;
+            border: 1px solid #7f5af0;
+            border-radius: 4px;
+            padding: 8px 0;
+            pointer-events: none;
+        }
+        
+        .dropdown-content a {
+            color: #d8b4fe;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #2d2b3a;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: rgba(127, 90, 240, 0.3);
+            color: #ffffff;
+            padding-left: 20px;
+        }
+            
+        /* FLYOUT SUBMENU */
+        .flyout-item {
+            position: relative;
+        }
+        
+        .flyout-menu {
+            display: none;
+            position: absolute;
+            top: -8px; /* Align with the top of parent dropdown */
+            left: 100%; /* Position to the right */
+            background-color: rgba(15, 14, 23, 0.98);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 1001; /* Higher than main dropdown */
+            border: 1px solid #7f5af0;
+            border-radius: 4px;
+            padding: 8px 0;
+            margin-left: 2px; /* Small gap from main menu */
+            pointer-events: none;
+        }
+        
+        .flyout-menu a {
+            color: #d8b4fe;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #2d2b3a;
+            transition: all 0.3s ease;
+        }
+        
+        .flyout-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .flyout-menu a:hover {
+            background-color: rgba(127, 90, 240, 0.3);
+            color: #ffffff;
+            padding-left: 20px;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+            opacity: 1;
+            pointer-events: auto; /* now links clickable */
+        }
+        
+        .flyout-item:hover .flyout-menu,
+        .flyout-item:focus-within .flyout-menu {
+            display: block;
+            pointer-events: auto;
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow,
+        .dropdown:focus-within .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+       
+        #mobile-menu {
+            display: none;
+            position: fixed;   /* Make it fixed so it stays visible anywhere */
+            top: 0;            /* Align to top of viewport */
+            left: 0;
+            right: 0;
+            bottom: 0;         /* Fill full height */
+            background-color: rgba(0,0,0,0.95);
+            z-index: 9999;     /* Above everything else */
+            overflow-y: auto;  /* Allow scrolling if menu is tall */
+            padding-top: 1px; /* Space below nav bar */
+            margin-top: 107px;
+        }
+        
+        #mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu.active {
+            display: block;
+            max-height: 500px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .lg\:grid-cols-2 { grid-template-columns: 1fr !important; }
+            .lg\:gap-12 { gap: 2rem !important; }
+            .text-4xl { font-size: 2.2rem !important; }
+            .text-6xl { font-size: 3rem !important; }
+            .hero-buttons { flex-direction: column; gap: 1rem; }
+            .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-grid, .services-grid, .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+            .hero-content { text-align: center; }
+            .section-heading { font-size: 2rem; }
+            
+            /* Mobile submenu */
+            #mobile-services-menu {
+                display: none; /* Hidden by default */
+                padding-left: 1rem; /* Indent submenu items */
+            }
+            
+            .dropdown-content {
+                display: none !important;
+            }
+            
+            #mobile-learn-menu {
+                display: none;
+                padding-left:1rem;
+            }
+
+            #mobile-services-menu.show {
+                display: block;
+            }  
+            
+            #mobile-learn-menu.show {
+                display: block;
+            }
+            
+            .dropdown-content, .flyout-menu {
+                display: none !important;
+            }
+            
+            #contact form input,
+            #contact form select,
+            #contact form textarea,
+            #contact form button { width: 100%; }
+            .hero img { width: 100%; height: auto; }
+        }
+
+        /* Other Modalities Specific Styles */
+        :root {
+            --primary: #d4af37;
+            --secondary: #8b7355;
+            --accent: #f5e8c8;
+            --dark: #1a1a1a;
+            --light: #f8f5f0;
+        }
+        
+        .modalities-body {
+            background: linear-gradient(135deg, #0d0221, #3c0d5a, #5b0e7a);
+            color: #fffffe;
+        }
+        
+        .modalities-h1, .modalities-h2, .modalities-h3, .modalities-h4, .modalities-h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--light);
+        }
+        
+        .modalities-section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 0 auto;
+        }
+        
+        .luxury-border {
+            border-bottom: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .luxury-border::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background-color: var(--secondary);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(13, 2, 33, 0.9), rgba(60, 13, 90, 0.9), rgba(91, 14, 122, 0.9));
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .tarot-back {
+            background: radial-gradient(circle, #4a044e 0%, #19072d 100%);
+            border: 2px solid var(--primary);
+        }
+        
+        .symbol {
+            font-size: 3rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .symbol:hover {
+            transform: scale(1.2);
+            color: var(--accent);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn-luxury {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .btn-luxury:hover::before {
+            left: 100%;
+        }
+        
+        .btn-luxury:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .course-card {
+            background: rgba(26, 26, 26, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            height: 100%;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary);
+        }
+        
+        .feature-icon:hover {
+            transform: rotate(15deg);
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .course-content {
+            padding: 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .course-details {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .course-description {
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        
+        .learn-more-btn {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            text-align: center;
+        }
+        
+        .learn-more-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* Enhanced Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.4s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a0b2e, #2d1b47);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--primary);
+            color: var(--light);
+            overflow: hidden;
+            animation: modalSlideIn 0.5s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from { 
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .modal-header h2 {
+            color: var(--dark);
+            margin: 0;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .learn-list {
+            columns: 2;
+            gap: 20px;
+        }
+        
+        .modal-section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-section:hover {
+            border-bottom-color: var(--primary);
+        }
+        
+        .guide-item {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 2px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .guide-item:hover {
+            padding-left: 20px;
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .modal-footer {
+            padding: 20px 30px;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .course-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-item {
+            flex: 1;
+            min-width: 150px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            background: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .highlight-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .highlight-label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .highlight-value {
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        @media (max-width: 768px) {
+            .learn-list {
+                columns: 1;
+            }
+            
+            .course-header {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .course-details {
+                margin-top: 10px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+            
+            .course-highlights {
+                flex-direction: column;
+            }
+            
+            .course-header h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0;
+            }
+            
+            .price-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .course-details {
+                gap: 10px;
+            }
+            
+            .detail-item {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .course-header {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .course-header h3 {
+                font-size: 1.1rem;
+            }
+            
+            .price-tag {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+            
+            .course-details {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced hover effects for cards */
+        .course-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        
+        /* Enhanced button animations */
+        .btn-luxury {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Text selection styling */
+        ::selection {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* Loading animation for modal */
+        .modal-loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Enrollment Form Styles */
+        .enroll-btn {
+            background: linear-gradient(90deg, #FFD700, #FFEA00);
+            color: #0d0221;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .enroll-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .enroll-btn:hover::before {
+            left: 100%;
+        }
+
+        .enroll-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Modal Styles for Enrollment Form */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .enrollment-modal-content {
+            background: linear-gradient(145deg, #1a1832, #2d2b42);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 1.5rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .enrollment-modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+            color: #fff;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #d8b4fe;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(15, 14, 23, 0.7);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 0.5rem;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: rgba(216, 180, 254, 0.5);
+        }
+
+        .required::after {
+            content: " *";
+            color: #f87171;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #FFD700, #FFEA00);
+            color: #0d0221;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @media (max-width: 640px) {
+            .enrollment-modal-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head> 
+<body class="min-h-screen modalities-body">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-purple-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20 md:h-20 min-h-0" style="height: 105px;">
+            <!-- BRAND: allow shrink and truncation -->
+            <div class="flex items-center min-w-0">
+              <img src="logo1.png" alt="Logo" class="h-20 w-20 object-contain flex-shrink-0 mr-1">
+              <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+                <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+                    Tarot Tales By Rashmi
+                </span>
+                <span class="text-lg md:text-2xl glow-text text-right" 
+                      style="font-family: 'Great Vibes', cursive; color: #FFD700; text-shadow: 0 0 8px #FFD700, 0 0 12px #FFEA00, 0 0 16px #FFE066;margin-right:8px;letter-spacing: 2px;">
+                  Ray of Light
+                </span>
+              </div>
+            </div>
+      
+            <!-- DESKTOP LINKS -->
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-8">
+                  <a href="index.html#home" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                  <a href="index.html#about" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+          
+                  <div class="dropdown">
+                      <span class="nav-link text-purple-100 px-3 py-2 text-sm font-medium flex items-center cursor-pointer">
+                          Services
+                          <svg class="dropdown-arrow w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                          </svg>
+                      </span>
+                      <div class="dropdown-content">
+                          <a href="reading11.html">Readings</a>
+                          <a href="healing11.html">Healings</a>
+                          
+                          <!-- FLYOUT SUBMENU FOR LEARN -->
+                          <div class="flyout-item">
+                              <a href="#" class="flex justify-between items-center hover:bg-transparent">
+                                  Learn
+                              </a>
+                              <div class="flyout-menu">
+                                  <a href="learn_tarot_reading.html">Tarot Reading</a>
+                                  <a href="learn_reiki.html">Reiki Healing</a>
+                                  <a href="other_therapy.html">Other Therapy</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+          
+                  <a href="index.html#testimonials" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Testimonials</a>
+                  <a href="index.html#contact" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+              </div>
+          </div>
+      
+            <!-- HAMBURGER (always visible on small screens) -->
+            <div class="md:hidden flex-shrink-0">
+              <button id="mobile-menu-button" class="text-purple-300 hover:text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-black bg-opacity-90 hidden" style="margin-top:107px;">  
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html#home" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Home</a>
+            <a href="index.html#about" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">About</a>
+    
+            <div class="px-3 py-2">
+                <button id="mobile-services-button" class="w-full text-left text-purple-100 hover:text-white flex items-center justify-between">
+                    Services
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="mobile-services-menu" class="mt-2 pl-4 hidden">
+                    <a href="reading11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Readings</a>
+                    <a href="healing11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Healings</a>
+                    
+                    <div class="mt-0">
+                        <button id="mobile-learn-button" class="w-full text-left   px-3 py-2 text-purple-200 hover:text-white flex items-center justify-between">
+                            Learn
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-learn-menu" class="mt-2 pl-4 hidden">
+                            <a href="learn_tarot_reading.html" class="text-purple-300 hover:text-white block px-5 py-2 " onclick="toggleMobileMenu()">Tarot Reading</a>
+                            <a href="learn_reiki.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Reiki Healing</a>
+                            <a href="other_therapy.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Other Therapy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <a href="index.html#testimonials" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Testimonials</a>
+            <a href="index.html#contact" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+    <!-- Other Modalities Content -->
+    <div style="margin-top: 105px;">
+        <!-- Hero Section -->
+        <section class="relative py-20 overflow-hidden ">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div class="absolute top-10 left-10 floating-element">
+                    <i class="fas fa-circle symbol"></i>
+                </div>
+                <div class="absolute top-20 right-20 floating-element" style="animation-delay: 1s;">
+                    <i class="fas fa-star symbol"></i>
+                </div>
+                <div class="absolute bottom-20 left-20 floating-element" style="animation-delay: 2s;">
+                    <i class="fas fa-heart symbol"></i>
+                </div>
+                <div class="absolute bottom-10 right-10 floating-element" style="animation-delay: 3s;">
+                    <i class="fas fa-spa symbol"></i>
+                </div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 modalities-h1">Other Modalities</h1>
+                        <p class="text-xl mb-8 text-gray-300">Explore powerful alternative healing and manifestation techniques to transform your life.</p>
+                        <p class="text-lg mb-8">Discover a range of specialized modalities that can help you access higher knowledge, manifest your desires, and create powerful energetic shifts in your life.</p>
+                        <a href="#courses" class="btn-luxury inline-block">Explore Courses</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center fade-in" style="transition-delay: 0.3s;">
+                        <div class="relative">
+                            <!-- Mystical Portal Design -->
+                            <div class="relative w-80 h-80">
+                                <!-- Outer Ring -->
+                                <div class="absolute inset-0 border-8 border-amber-400 rounded-full animate-spin-slow">
+                                    <div class="absolute inset-2 border-4 border-purple-500 rounded-full opacity-70"></div>
+                                </div>
+                                
+                                <!-- Middle Ring -->
+                                <div class="absolute inset-8 border-6 border-pink-500 rounded-full animate-spin-slow" style="animation-direction: reverse; animation-duration: 8s;">
+                                    <div class="absolute inset-2 border-4 border-amber-300 rounded-full opacity-70"></div>
+                                </div>
+                                
+                                <!-- Central Portal -->
+                                <div class="absolute inset-16 bg-gradient-to-br from-purple-900 to-pink-800 rounded-full shadow-2xl flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-star-and-crescent text-4xl text-amber-300 mb-2"></i>
+                                        <p class="text-xs text-amber-200 font-light">MODALITIES</p>
+                                    </div>
+                                    
+                                    <!-- Portal Energy Points -->
+                                    <div class="absolute w-4 h-4 bg-amber-400 rounded-full top-4 left-4 animate-ping"></div>
+                                    <div class="absolute w-3 h-3 bg-pink-400 rounded-full bottom-4 right-4 animate-ping" style="animation-delay: 0.5s;"></div>
+                                    <div class="absolute w-2 h-2 bg-purple-400 rounded-full top-4 right-4 animate-ping" style="animation-delay: 1s;"></div>
+                                    <div class="absolute w-3 h-3 bg-amber-300 rounded-full bottom-4 left-4 animate-ping" style="animation-delay: 1.5s;"></div>
+                                </div>
+                                
+                                <!-- Floating Symbols -->
+                                <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 floating-element">
+                                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shadow-lg">
+                                        <i class="fas fa-eye text-amber-700 text-sm"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute -right-2 top-1/2 transform -translate-y-1/2 floating-element" style="animation-delay: 1s;">
+                                    <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center shadow-lg">
+                                        <i class="fas fa-seedling text-purple-700 text-xs"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 floating-element" style="animation-delay: 2s;">
+                                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center shadow-lg">
+                                        <i class="fas fa-infinity text-pink-700 text-sm"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 floating-element" style="animation-delay: 3s;">
+                                    <div class="w-9 h-9 bg-amber-50 rounded-full flex items-center justify-center shadow-lg">
+                                        <i class="fas fa-mountain text-amber-600 text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What are Other Modalities Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 modalities-h2">What Are Other Modalities?</h2>
+                    <div class="modalities-section-divider mb-8"></div>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-8">These specialized techniques offer unique approaches to healing, manifestation, and personal transformation beyond traditional energy work.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-search text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 modalities-h3">Dowsing</h3>
+                        <p class="text-gray-300">Access higher knowledge and gain mental clarity through pendulum dowsing, a powerful form of divination.</p>
+                    </div>
+                    
+                    <div class="text-center fade-in" style="transition-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 modalities-h3">Afformations</h3>
+                        <p class="text-gray-300">Transform your subconscious thought patterns with empowering questions that manifest your deepest desires.</p>
+                    </div>
+                    
+                    <div class="text-center fade-in" style="transition-delay: 0.4s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-draw-polygon text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 modalities-h3">Sigil Magic</h3>
+                        <p class="text-gray-300">Create your own powerful symbols and signs to encode intentions and manifest your dreams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 modalities-h2">Other Modalities Courses</h2>
+                    <div class="modalities-section-divider mb-8"></div>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-8">Discover our specialized courses in dowsing, afformations, sigil magic, and Lama Fera healing.</p>
+                </div>
+                
+                <!-- Other Modalities Courses -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+                    <!-- Dowsing -->
+                    <div class="course-card fade-in hover-glow">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 modalities-h3">Dowsing</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>3 hrs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">2499 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Pendulum dowsing is a powerful form of divination used to gain higher knowledge, mental clarity, and spiritual or material guidance.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="dowsing">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Afformation Creation -->
+                    <div class="course-card fade-in hover-glow">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 modalities-h3">Afformation Creation</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>3 hrs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">999 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Afformations are empowering questions that immediately change your subconscious thought patterns from negative to positive.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="afformation">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Sigil Creations -->
+                    <div class="course-card fade-in hover-glow">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 modalities-h3">Sigil Creations</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>4 hrs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">2500 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">Create your own symbols & signs and provide extra witchy power to your dreams & manifestations through sigil magic.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="sigil">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Lama Fera -->
+                    <div class="course-card fade-in hover-glow">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 modalities-h3">Lama Fera (Basic level)</h3>
+                                    <div class="course-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock text-yellow-400"></i>
+                                            <span>1 day</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-user-graduate text-yellow-400"></i>
+                                            <span>Beginner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-tag ml-4">11999 Rs</div>
+                            </div>
+                            
+                            <div class="course-description">
+                                <p class="text-gray-300 mb-4">World's fastest healing technique using powerful symbols to heal yourself and others, balance finances, health & relationships.</p>
+                                <div class="detail-item mb-2">
+                                    <i class="fas fa-laptop text-yellow-400"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            
+                            <button class="learn-more-btn hover-glow" data-course="lamaf">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enrollment CTA Section -->
+                <div class="text-center mt-16 fade-in">
+                    <div class="max-w-2xl mx-auto">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 modalities-h2">Ready to Transform Your Life?</h3>
+                        <p class="text-lg text-gray-300 mb-8">Enroll in any of our specialized modalities courses and unlock your true potential.</p>
+                        <button id="enroll-button" class="enroll-btn text-black font-semibold py-3 px-8 rounded-full">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 gold-gradient opacity-90"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl mx-auto text-center text-dark fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 modalities-h2">Begin Your Transformation Today</h2>
+                    <p class="text-xl mb-8">Experience the power of these specialized modalities to manifest your desires, access higher knowledge, and create powerful energetic shifts in your life.</p>
+                    <button id="enroll-button-2" class="btn-luxury bg-dark text-gold hover:bg-gray-800 inline-block">Enroll Now</button>
+                </div>
+            </div>
+            
+            <!-- Floating elements -->
+            <div class="absolute top-10 left-10 floating-element">
+                <i class="fas fa-circle text-dark opacity-20 text-6xl"></i>
+            </div>
+            <div class="absolute bottom-10 right-10 floating-element" style="animation-delay: 2s;">
+                <i class="fas fa-star text-dark opacity-20 text-6xl"></i>
+            </div>
+        </section>
+
+        <!-- Course Detail Modals -->
+        <div id="courseModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Course Details</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="modalContent"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-luxury enroll-course-btn">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enrollment Form Modal -->
+        <div id="enrollment-modal" class="modal-overlay">
+            <div class="enrollment-modal-content">
+                <button class="close-modal" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-cinzel font-bold text-white mb-4">
+                        Enroll in <span class="highlight">Other Modalities Course</span>
+                    </h2>
+                    <div class="section-divider mb-4"></div>
+                    <p class="text-purple-200">
+                        Begin your journey into powerful healing and manifestation techniques. Fill out the form below to enroll.
+                    </p>
+                </div>
+                
+                <form id="enrollment-form">
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullName" class="form-label required">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            class="form-input"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Mobile Number -->
+                    <div class="form-group">
+                        <label for="mobile" class="form-label required">Mobile Number</label>
+                        <input 
+                            type="tel" 
+                            id="mobile" 
+                            name="mobile" 
+                            class="form-input"
+                            placeholder="Enter your mobile number"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input"
+                            placeholder="Enter your email address (optional)"
+                        >
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <i class="fab fa-whatsapp"></i> Send to WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <div class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-cinzel text-purple-300 mb-4">Tarot Tales By Rashmi</h3>
+                    <p class="text-purple-200">
+                        Providing intuitive tarot readings to help you navigate life's journey with clarity and confidence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-purple-200 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-purple-200 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#readings" class="text-purple-200 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#testimonials" class="text-purple-200 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-purple-200 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Reading Hours</h3>
+                    <ul class="space-y-2 text-purple-200">
+                        <li class="flex justify-between"><span>Monday - Friday</span> <span>10am - 8pm</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>11am - 6pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
+                    <p class="text-purple-200 mb-4">
+                        Subscribe for monthly tarot insights and special offers.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-black bg-opacity-50 border border-purple-800 rounded-l-md px-4 py-2 text-white focus:outline-none w-full">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-purple-200 mb-4 md:mb-0">
+                    &copy; 2025 Tarot Tales By Rashmi. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Mobile services menu functionality
+        document.getElementById('mobile-services-button').addEventListener('click', function() {
+            const mobileServicesMenu = document.getElementById('mobile-services-menu');
+            mobileServicesMenu.classList.toggle('hidden');
+        });
+
+        // Toggle mobile menu when button is clicked
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            toggleMobileMenu();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // toggle menu
+        mobileMenuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("show"); // toggle show class
+        });
+
+        // close menu when clicking any link inside it
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("show");
+                mobileServicesMenu.classList.remove("show");
+                mobileLearnMenu.classList.remove("show");
+            });
+        });
+
+        // close services submenu when link is clicked
+        document.querySelectorAll("#mobile-services-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+
+        // toggle services submenu inside mobile
+        const mobileServicesButton = document.getElementById("mobile-services-button");
+        const mobileServicesMenu = document.getElementById("mobile-services-menu");
+        const mobileLearnButton = document.getElementById("mobile-learn-button");
+        const mobileLearnMenu = document.getElementById("mobile-learn-menu");
+        
+        if (mobileServicesButton) {
+            mobileServicesButton.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mobileServicesMenu.classList.toggle("show"); // toggle 'show' class instead of hidden
+            });
+        }
+
+        if (mobileLearnButton) {
+            mobileLearnButton.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mobileLearnMenu.classList.toggle("show");
+            });
+        }
+        
+        (function(){
+            emailjs.init("_Z4KNnjSnhivkvh72"); // replace with your actual Public Key
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            emailjs.sendForm('service_cbgel4l', 'template_kkddrkb', '#contact-form')
+                .then(function() {
+                    alert('Message sent successfully!');
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                    console.error('EmailJS error:', error);
+                });
+        }
+
+        // Other Modalities Page Specific JavaScript
+        // Fade in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Modal functionality
+            const modal = document.getElementById('courseModal');
+            const closeBtn = document.querySelector('.close-modal');
+            const modalContent = document.getElementById('modalContent');
+            const modalTitle = document.getElementById('modalTitle');
+            const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+            
+            // Course data
+            const courseData = {
+                dowsing: {
+                    title: "Dowsing",
+                    duration: "3 hrs",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "2499 Rs",
+                    description: "Pendulum dowsing is a powerful form of divination used to gain higher knowledge, mental clarity, and spiritual or material guidance. It helps access information beyond our normal conscious level, tapping into our Higher Self and universal energy. Pendulum dowsing is almost 100% accurate and can provide insights into food, health, and everyday problems, making it a valuable tool for understanding and solving issues.",
+                    sections: [
+                        {
+                            title: "How Does Pendulum Dowsing Work?",
+                            items: [
+                                "The pendulum taps into the dowser-healer's intuition and sixth sense, acting as a receiver and transmitter of information from higher guidance, guardian angels, and spiritual teachers.",
+                                "As the pendulum moves, it provides answers to questions by accessing universal energy and helpful spirits.",
+                                "This process allows the dowser to receive responses that travel through time and space."
+                            ]
+                        },
+                        {
+                            title: "What Questions Can You Ask the Pendulum?",
+                            items: [
+                                "The pendulum responds best to 'yes' or 'no' questions, making it ideal for straightforward queries."
+                            ]
+                        }
+                    ],
+                    learn: [
+                        "How to use Pendulum for dowsing",
+                        "How to heal, cleanse and balance your chakra energies through distance healing",
+                        "How dowsing helps in taking the right decisions and implementing them in the best manner and in the most cost-effective way",
+                        "To finding lost items, locating missing people, finding underground water",
+                        "How to choose your best career, suitable colours, gemstones, cosmetics etc",
+                        "How to help finding out compatibility between partners, Marriage proposal analysis etc",
+                        "How to rectify all your Vastu / Feng Sui / Geomancy problems and negative energy fields"
+                    ]
+                },
+                afformation: {
+                    title: "Afformation Creation",
+                    duration: "3 hrs",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "999 Rs",
+                    description: "Afformations are empowering questions that immediately change your subconscious thought patterns from negative to positive. Building on the incredible power of affirmations to draw abundant changes into your life, afformations allow you to focus on what your deepest desires are to empower you to manifest them. The concept puts a subtle yet powerful spin on the idea of seeing things as if they've already happened. By turning positive statements into 'why' questions, the subconscious mind doesn't have a chance to block the thought. Instead, it looks for answers to the 'why' questions.",
+                    learn: [
+                        "Design your personal Afformations with a step-by-step for love, success, healing, creativity, inspiration, focus etc",
+                        "Use afformations in everyday life"
+                    ]
+                },
+                sigil: {
+                    title: "Sigil Creations",
+                    duration: "4 hrs",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "2500 Rs",
+                    description: "Did you know you can create your own symbols & signs and provide extra witchy power to your dreams & manifestations. It's called as Sigil magic! These aren't just doodles & random drawings — they're secret spells, encoded in lines, curves, intentions, and rituals.",
+                    learn: [
+                        "Design your personal sigils with a step-by-step ritual. Learn sigils for love, success, healing, creativity, inspiration, focus etc",
+                        "Use them in everyday life — from journals and candles to mirrors and your skin",
+                        "Activate these symbols using breath, fire, or focused energy",
+                        "Integrating sigils into candle magick & your spiritual daily rituals"
+                    ]
+                },
+                lamaf: {
+                    title: "Lama Fera (Basic level)",
+                    duration: "1 day",
+                    eligibility: "Beginner",
+                    format: "Online",
+                    price: "11999 Rs",
+                    description: "The system can help increase spiritual abilities, improve the effectiveness of meditation, relieve pain and discomfort caused by chronic diseases, remove unwanted spirits, cleanse buildings, overcome fear, anxiety, stress, and mental tensions, improve memory and visualization, and assist reconnection with the Higher Self. This technique and lama fera symbols are used to release depression, which is developed in the patient due to unnecessary thoughts and mental pressure. In these 45 symbols of Shalvik Mantra Rahasya created with the vibrations of 4,50,000 mantras are converted into 12 special symbols and are used by the healer to treat the person.",
+                    learn: [
+                        "15-min self-healing technique — anytime, anywhere",
+                        "6 powerful symbols to heal yourself and others",
+                        "Balance Finances, Health & Relationships",
+                        "Distance healing to others"
+                    ],
+                    benefits: [
+                        "World fastest healing technique which needs very short period of healing time than any other techniques",
+                        "Clear feelings of vibrations by therapist and the clients",
+                        "Distance healings",
+                        "Release depression, fear in dreams, unknown fears, all types of chronic diseases, memory loss, and reduce the adverse effect of the tantra mantra, before time death",
+                        "Releases negative energy from the atmosphere of the house, shop, and factory, protecting in future at the mental, physical and emotional levels",
+                        "Removes any issues related to black magic, spirit and negative vibrations. It helps to heal serious health issues",
+                        "Heals on mind, body and soul level",
+                        "Removes negative energies from any vaastu",
+                        "Removes financial blockages",
+                        "Heals relationship issues",
+                        "Heals past life karmas",
+                        "Removes any type of fears, phobias and anxiety"
+                    ]
+                }
+            };
+            
+            // Open modal on button click
+            learnMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const courseId = this.getAttribute('data-course');
+                    const course = courseData[courseId];
+                    
+                    if (course) {
+                        // Show loading state
+                        modalContent.innerHTML = `
+                            <div class="modal-loading">
+                                <div class="spinner"></div>
+                            </div>
+                        `;
+                        
+                        modal.style.display = 'block';
+                        modalTitle.textContent = course.title;
+                        
+                        // Simulate loading delay for better UX
+                        setTimeout(() => {
+                            let sectionsHTML = '';
+                            
+                            // Course highlights
+                            sectionsHTML += `
+                                <div class="course-highlights">
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="highlight-label">Duration</div>
+                                        <div class="highlight-value">${course.duration}</div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-user-graduate"></i>
+                                        </div>
+                                        <div class="highlight-label">Eligibility</div>
+                                        <div class="highlight-value">${course.eligibility}</div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                        <div class="highlight-label">Format</div>
+                                        <div class="highlight-value">${course.format}</div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-tag"></i>
+                                        </div>
+                                        <div class="highlight-label">Price</div>
+                                        <div class="highlight-value">${course.price}</div>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            if (course.sections) {
+                                course.sections.forEach(section => {
+                                    sectionsHTML += `
+                                        <div class="modal-section">
+                                            <h4 class="text-lg font-semibold mb-3 text-yellow-400">${section.title}</h4>
+                                            <div class="space-y-3">
+                                                ${section.items.map(item => `<div class="guide-item">${item}</div>`).join('')}
+                                            </div>
+                                        </div>
+                                    `;
+                                });
+                            }
+                            
+                            if (course.benefits) {
+                                sectionsHTML += `
+                                    <div class="modal-section">
+                                        <h4 class="text-lg font-semibold mb-3 text-yellow-400">Benefits:</h4>
+                                        <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                                            ${course.benefits.map(item => `<li>${item}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                `;
+                            }
+                            
+                            modalContent.innerHTML = `
+                                <div class="modal-section">
+                                    <p class="text-gray-300 mb-6">${course.description}</p>
+                                </div>
+                                
+                                ${sectionsHTML}
+                                
+                                <div class="modal-section">
+                                    <h4 class="text-lg font-semibold mb-3 text-yellow-400">What You'll Learn:</h4>
+                                    <ul class="learn-list list-disc pl-5 text-gray-300 space-y-2">
+                                        ${course.learn.map(item => `<li>${item}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            `;
+                        }, 500);
+                    }
+                });
+            });
+            
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Enrollment Form Functionality
+            const enrollButton = document.getElementById('enroll-button');
+            const enrollButton2 = document.getElementById('enroll-button-2');
+            const closeModalBtn = document.getElementById('close-modal');
+            const enrollmentModal = document.getElementById('enrollment-modal');
+            const form = document.getElementById('enrollment-form');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Open modal when enroll buttons are clicked
+            enrollButton.addEventListener('click', () => {
+                enrollmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            enrollButton2.addEventListener('click', () => {
+                enrollmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            // Close modal when X is clicked
+            closeModalBtn.addEventListener('click', () => {
+                enrollmentModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside the content
+            enrollmentModal.addEventListener('click', (e) => {
+                if (e.target === enrollmentModal) {
+                    enrollmentModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // WhatsApp integration function
+            function sendToWhatsApp(formData) {
+                // WhatsApp phone number
+                const phoneNumber = "918956259430";
+                
+                // Format the message with proper encoding for WhatsApp
+                let message = encodeURIComponent(` *OTHER MODALITIES COURSE ENROLLMENT REQUEST* 
+
+ *Student Details:*
+────────────────
+ *Full Name:* ${formData.fullName}
+ *Mobile:* ${formData.mobile}
+ *Email:* ${formData.email || 'Not Provided'}
+
+ *Course Interest:*
+────────────────
+ *Interested in:* Other Modalities Courses
+ *Message:* I'm interested in learning more about your specialized modalities courses and would like to enroll.
+
+ *Looking forward to starting my transformation journey!* `);
+
+                // Create WhatsApp URL
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                
+                // Show loading state
+                submitBtn.innerHTML = '<div class="loading-spinner"></div> Preparing WhatsApp...';
+                submitBtn.disabled = true;
+                
+                // Open WhatsApp directly after a short delay
+                setTimeout(() => {
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Reset form and close modal
+                    setTimeout(() => {
+                        form.reset();
+                        enrollmentModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                        
+                        // Reset button state
+                        submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Send to WhatsApp';
+                        submitBtn.disabled = false;
+                    }, 1000);
+                }, 1500);
+            }
+
+            // Form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simple validation
+                const fullName = document.getElementById('fullName').value.trim();
+                const mobile = document.getElementById('mobile').value.trim();
+                const email = document.getElementById('email').value.trim();
+                
+                if (!fullName) {
+                    alert('Please enter your full name');
+                    document.getElementById('fullName').focus();
+                    return;
+                }
+                
+                if (!mobile) {
+                    alert('Please enter your mobile number');
+                    document.getElementById('mobile').focus();
+                    return;
+                }
+                
+                // Validate mobile number format
+                const mobileRegex = /^[0-9]{10}$/;
+                if (!mobileRegex.test(mobile)) {
+                    alert('Please enter a valid 10-digit mobile number');
+                    document.getElementById('mobile').focus();
+                    return;
+                }
+                
+                // Collect form data
+                const formData = {
+                    fullName,
+                    mobile,
+                    email
+                };
+                
+                // Send to WhatsApp
+                sendToWhatsApp(formData);
+            });
+
+            // Prevent form submission on Enter key
+            form.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                }
+            });
+
+            // Add enroll button to course modal
+            document.querySelectorAll('.enroll-course-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    enrollmentModal.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
