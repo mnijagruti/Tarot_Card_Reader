@@ -1,0 +1,2502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Tales By Rashmi  | Intuitive Guidance</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+    
+        /* box-sizing + prevent page overflow */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { overflow-x: hidden; }
+
+/* ensure img/svg don't force width */
+img, svg { max-width: 100%; height: auto; }
+
+/* ensure flex children can shrink */
+.min-w-0 { min-width: 0; }
+.truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* slightly reduce header spacing on very small screens */
+@media (max-width: 420px) {
+  nav .h-20 { height: 56px; } /* smaller nav height if needed */
+  .max-w-7xl { padding-left: 12px; padding-right: 12px; }
+}
+
+        html {
+  scroll-behavior: smooth;
+}
+      
+        /* body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0e17;
+            background-color: white;
+
+            color: #fffffe;
+            color: #0f0e17;
+
+            overflow-x: hidden;
+         
+        } */
+        .font-cinzel {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+
+
+
+           
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0f0e17;
+            color: #fffffe;
+            overflow-x: hidden;
+         
+        }
+
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(127, 90, 240, 0.3);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #7f5af0, #d946ef);
+            margin: 0 auto;
+        }
+        .screenshot-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: #1a1832;
+            /* height: 100%; */
+        }
+       
+.screenshot-image {
+    width: 100%;
+    max-height: 500px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+        .screenshot-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 14, 23, 0.9);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .screenshot-container:hover .screenshot-overlay {
+            transform: translateY(0);
+        }
+        .screenshot-footer {
+            padding: 12px 15px;
+            text-align: center;
+            font-style: italic;
+            border-top: 1px solid #2d2b42;
+            background: rgba(15, 14, 23, 0.8);
+        }
+        .instagram-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .tarot-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .tarot-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 20px 25px -5px rgba(217, 70, 239, 0.2), 0 10px 10px -5px rgba(217, 70, 239, 0.1);
+        }
+        .tarot-back {
+            background: radial-gradient(circle, #4a044e 0%, #19072d 100%);
+            border: 2px solid #7f5af0;
+        }
+        .tarot-border {
+            border: 1px solid #7f5af0;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.7);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #7f5af0;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+
+
+
+
+
+
+        /* dropdown menues */
+          /* Dropdown styles */
+          .dropdown {
+            position: relative;
+            /* display: inline-block; */
+        }
+      
+.dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(15, 14, 23, 0.98);
+        min-width: 220px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+        z-index: 1000;
+        border: 1px solid #7f5af0;
+        border-radius: 4px;
+        padding: 8px 0;
+        pointer-events: none;
+    }
+        .dropdown-content a {
+            color: #d8b4fe;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            /* transition: background-color 0.3s ease; */
+            border-bottom: 1px solid #2d2b3a;
+            transition: all 0.3s ease;
+        }
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(127, 90, 240, 0.3);
+            color: #ffffff;
+            padding-left: 20px;
+        }
+            
+   /* FLYOUT SUBMENU */
+   .flyout-item {
+        position: relative;
+    }
+    .flyout-menu {
+        display: none;
+        position: absolute;
+        top: -8px; /* Align with the top of parent dropdown */
+        left: 100%; /* Position to the right */
+        background-color: rgba(15, 14, 23, 0.98);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+        z-index: 1001; /* Higher than main dropdown */
+        border: 1px solid #7f5af0;
+        border-radius: 4px;
+        padding: 8px 0;
+        margin-left: 2px; /* Small gap from main menu */
+        pointer-events: none;
+    }
+    .flyout-menu a {
+        color: #d8b4fe;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #2d2b3a;
+        transition: all 0.3s ease;
+    }
+    .flyout-menu a:last-child {
+        border-bottom: none;
+    }
+    .flyout-menu a:hover {
+        background-color: rgba(127, 90, 240, 0.3);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+
+
+        .dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+    opacity: 1;
+    pointer-events: auto; /* now links clickable */
+}
+/* .flyout-item:hover .flyout-menu {
+        display: block;
+    } */
+    .flyout-item:hover .flyout-menu,
+    .flyout-item:focus-within .flyout-menu {
+        display: block;
+        pointer-events: auto;
+    }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+        /* .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        } */
+
+
+        .dropdown:hover .dropdown-arrow,
+        .dropdown:focus-within .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+
+
+
+
+
+       
+        #mobile-menu {
+  display: none;
+  position: fixed;   /* Make it fixed so it stays visible anywhere */
+  top: 0;            /* Align to top of viewport */
+  left: 0;
+  right: 0;
+  bottom: 0;         /* Fill full height */
+  background-color: rgba(0,0,0,0.95);
+  z-index: 9999;     /* Above everything else */
+  overflow-y: auto;  /* Allow scrolling if menu is tall */
+  padding-top: 1px; /* Space below nav bar */
+  margin-top: 107px;
+}
+#mobile-menu.show {
+  display: block;
+}
+
+        .mobile-menu.active {
+            display: block;
+            max-height: 500px;
+        }
+        
+      
+
+
+
+         /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .lg\:grid-cols-2 { grid-template-columns: 1fr !important; }
+      .lg\:gap-12 { gap: 2rem !important; }
+      .text-4xl { font-size: 2.2rem !important; }
+      .text-6xl { font-size: 3rem !important; }
+      .hero-buttons { flex-direction: column; gap: 1rem; }
+      .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+        @media (max-width: 768px) {
+      .testimonial-grid, .services-grid, .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+      .hero-content { text-align: center; }
+      .section-heading { font-size: 2rem; }
+      /* .mobile-menu-button { display: block !important; } */
+
+
+       /* Mobile submenu */
+  #mobile-services-menu {
+    display: none; /* Hidden by default */
+    padding-left: 1rem; /* Indent submenu items */
+  }
+    
+      .dropdown-content {
+    display: none !important;
+  }
+  #mobile-learn-menu {
+        display: none;
+        padding-left:1rem;
+      }
+
+  #mobile-services-menu.show {
+    display: block;
+  }  
+   #mobile-learn-menu.show {
+        display: block;
+      }
+      .dropdown-content, .flyout-menu {
+        display: none !important;
+      }
+      #contact form input,
+      #contact form select,
+      #contact form textarea,
+      #contact form button { width: 100%; }
+      .hero img { width: 100%; height: auto; }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* style for healing page */
+       /* NEW CARD DESIGN */
+       .elegant-card {
+            background: linear-gradient(145deg, rgba(25, 23, 36, 0.9), rgba(15, 14, 23, 0.95));
+            border-radius: 16px;
+            border: 1px solid rgba(127, 90, 240, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .elegant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(127, 90, 240, 0.15);
+            border-color: rgba(127, 90, 240, 0.4);
+        }
+        
+        .card-header {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+        
+        .elegant-card:hover .card-image {
+            transform: scale(1.08);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(transparent, rgba(15, 14, 23, 0.9));
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #7f5af0, #d946ef);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(127, 90, 240, 0.3);
+        }
+        
+        .card-content {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fffffe;
+            line-height: 1.3;
+        }
+        
+        .card-description {
+            color: #a7a9be;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .card-features {
+            margin-bottom: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #a7a9be;
+            font-size: 14px;
+        }
+        
+        .feature-image {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 1px solid #7f5af0;
+        }
+        
+        .card-footer {
+            background: rgba(127, 90, 240, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: auto;
+        }
+        
+        .price-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #7f5af0, #4a044e);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .duration {
+            color: #a7a9be;
+            font-size: 14px;
+        }
+        
+        .card-button {
+            background: linear-gradient(135deg, #7f5af0, #d946ef);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(127, 90, 240, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .card-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(127, 90, 240, 0.4);
+        }
+        
+        .card-button:hover:before {
+            left: 100%;
+        }
+        
+        /* Section Styles */
+        .section-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #7f5af0, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #a7a9be;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Grid Layout */
+        .readings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .readings-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .section-subtitle {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+            
+            .card-header {
+                height: 200px;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0f0e17;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #7f5af0, #d946ef);
+            border-radius: 10px;
+        }
+        
+        /* Particle Background */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(127, 90, 240, 0.2);
+            animation: float-particle 15s infinite linear;
+        }
+        
+        @keyframes float-particle {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        /* Text Reveal Animation */
+        .text-reveal {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(127, 90, 240, 0.1), rgba(217, 70, 239, 0.1));
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #7f5af0, transparent);
+        }
+        
+        .cta-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #fffffe;
+        }
+        
+        .cta-description {
+            color: #a7a9be;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #7f5af0, #d946ef);
+            border: none;
+            border-radius: 50px;
+            padding: 16px 40px;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 16px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(127, 90, 240, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(127, 90, 240, 0.4);
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* BEAUTIFUL ENROLLMENT FORM STYLES */
+        .enrollment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 14, 23, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+        
+        .enrollment-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+
+        .enrollment-form-container {
+            background: linear-gradient(135deg, #1a1832 0%, #0f0e17 50%, #1a1832 100%);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 
+                0 25px 50px rgba(127, 90, 240, 0.25),
+                0 0 0 1px rgba(127, 90, 240, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            animation: modalSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .enrollment-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .enrollment-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+        
+        .enrollment-header h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #D4AF37;
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #D4AF37, #FFE55C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .enrollment-header p {
+            color: #d1c4e9;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        .selected-course-badge {
+            background: linear-gradient(135deg, rgba(127, 90, 240, 0.2), rgba(212, 175, 55, 0.2));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .selected-course-badge h3 {
+            color: #D4AF37;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-label {
+            display: block;
+            color: #D4AF37;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .required::after {
+            content: " *";
+            color: #ff6b6b;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(15, 14, 23, 0.8);
+            border: 1px solid rgba(127, 90, 240, 0.4);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 
+                0 0 0 3px rgba(212, 175, 55, 0.2),
+                0 5px 15px rgba(127, 90, 240, 0.3);
+            background: rgba(15, 14, 23, 0.9);
+        }
+        
+        .form-input::placeholder {
+            color: #a7a9be;
+            opacity: 0.7;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-section-title {
+            font-size: 1.3rem;
+            color: #D4AF37;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            font-weight: 600;
+        }
+        
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        .file-input-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            background: rgba(127, 90, 240, 0.1);
+            border: 2px dashed rgba(127, 90, 240, 0.4);
+            border-radius: 10px;
+            color: #d1c4e9;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .file-input-label:hover {
+            background: rgba(127, 90, 240, 0.2);
+            border-color: #D4AF37;
+        }
+        
+        .file-input-label i {
+            margin-right: 8px;
+            color: #D4AF37;
+        }
+        
+        .form-note {
+            font-size: 0.85rem;
+            color: #a7a9be;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(127, 90, 240, 0.3);
+        }
+        
+        .submit-btn {
+            flex: 1;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #D4AF37, #8B5FBF);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+        
+        .cancel-btn {
+            padding: 16px 24px;
+            background: transparent;
+            border: 1px solid #a7a9be;
+            border-radius: 12px;
+            color: #a7a9be;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        
+        .cancel-btn:hover {
+            background: rgba(167, 169, 190, 0.1);
+            color: #fffffe;
+            border-color: #fffffe;
+        }
+        
+        .enrollment-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(127, 90, 240, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .enrollment-close:hover {
+            background: rgba(127, 90, 240, 1);
+            transform: scale(1.1) rotate(90deg);
+        }
+  /* Floating decorative elements */
+  .floating-sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #D4AF37;
+            border-radius: 50%;
+            animation: sparkleFloat 4s ease-in-out infinite;
+        }
+        
+        .sparkle-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .sparkle-2 { top: 20%; right: 8%; animation-delay: 1s; }
+        .sparkle-3 { bottom: 15%; left: 10%; animation-delay: 2s; }
+        
+        @keyframes sparkleFloat {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: translateY(-10px) scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .enrollment-form-container {
+                padding: 25px 20px;
+                margin: 10px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .enrollment-header h2 {
+                font-size: 2rem;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .cancel-btn {
+                min-width: auto;
+            }
+        }
+        
+        /* Scrollbar styling */
+        .enrollment-form-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .enrollment-form-container::-webkit-scrollbar-track {
+            background: rgba(15, 14, 23, 0.5);
+            border-radius: 3px;
+        }
+        
+        .enrollment-form-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #7f5af0, #d946ef);
+            border-radius: 3px;
+        }
+
+
+        /* Card Button Styles */
+        .card-button {
+            background: linear-gradient(135deg, #7f5af0, #d946ef);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(127, 90, 240, 0.3);
+            cursor: pointer;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .card-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(127, 90, 240, 0.4);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .enrollment-form {
+                padding: 20px;
+                width: 95%;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .personal-details-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .submit-btn,
+            .cancel-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Animation for modal */
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .enrollment-form {
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </style>
+</head> 
+<body class="min-h-screen ">
+
+<!-- animationnn -->
+       <!-- Particle Background -->
+       <div class="particles-container" id="particles-container"></div>
+    
+<!-- 2 -->
+
+<!-- Beautiful Enrollment Form Modal -->
+<div id="enrollmentModal" class="enrollment-modal">
+    <div class="enrollment-form-container">
+        <!-- Floating sparkles -->
+        <div class="floating-sparkle sparkle-1"></div>
+        <div class="floating-sparkle sparkle-2"></div>
+        <div class="floating-sparkle sparkle-3"></div>
+        
+        <button id="enrollmentClose" class="enrollment-close">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="enrollment-header">
+            <h2>Enroll Now</h2>
+            <p>Begin your healing journey with us</p>
+        </div>
+        
+        <div class="selected-course-badge">
+            <h3>Healing Service: <span id="selectedHealingDisplay">Reiki Healing</span></h3>
+        </div>
+        
+        <form id="enrollmentForm">
+            <input type="hidden" id="selectedHealing" name="selectedHealing">
+            
+            <!-- <div class="form-grid"> -->
+                <div class="form-group">
+                    <label for="fullName" class="form-label required">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mobile" class="form-label required">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" class="form-input" required placeholder="Your mobile number">
+                </div>
+            <!-- </div> -->
+            
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com">
+            </div>
+            
+            <!-- <h3 class="form-section-title">Personal Details</h3> -->
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="birthDate" class="form-label required">Birth Date</label>
+                    <input type="date" id="birthDate" name="birthDate" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthTime" class="form-label required">Birth Time</label>
+                    <input type="time" id="birthTime" name="birthTime" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthLocation" class="form-label required">Birth Location</label>
+                    <input type="text" id="birthLocation" name="birthLocation" class="form-input" required placeholder="City, Country">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="photograph" class="form-label">Photograph</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="photograph" name="photograph" accept="image/*">
+                    <label for="photograph" class="file-input-label">
+                        <i class="fas fa-camera"></i>
+                        <span>Choose a photo </span>
+                    </label>
+                </div>
+                <div class="form-note">For better energy connection - JPG, PNG up to 5MB</div>
+            </div>
+            
+            <div class="form-actions">
+                <!-- <button type="button" class="cancel-btn" id="cancelEnrollment">Cancel</button> -->
+                <button type="submit" class="submit-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    Send via WhatsApp
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <!-- Navigation -->
+<!-- NAV (replace your existing <nav> ... </nav> & the mobile menu right after it) -->
+<nav class="bg-black bg-opacity-70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-purple-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 md:h-20 min-h-0" style="height: 105px;">
+        <!-- BRAND: allow shrink and truncation -->
+        <div class="flex items-center min-w-0">
+         
+          <img src="logo1.png" alt="Logo" class="h-20 w-20 object-contain flex-shrink-0 mr-1">
+          <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+         
+      
+              
+                <span class="text-lg md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+               
+              Tarot Tales By Rashmi
+          
+
+            </span>
+           
+
+  <span class="text-lg md:text-2xl glow-text text-right" 
+        style="font-family: 'Great Vibes', cursive; color: #FFD700; text-shadow: 0 0 8px #FFD700, 0 0 12px #FFEA00, 0 0 16px #FFE066;margin-right:8px;letter-spacing: 2px;">
+    Ray of Light
+  </span>
+
+          </div>
+        </div>
+  
+
+<!-- 
+ <div class="flex items-center min-w-0">
+          <img src="logo1.png" alt="Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain flex-shrink-0 mr-2 md:mr-3">
+          <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+              <span class="text-2xl md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+                  Tarot Tales By Rashmi
+              </span>
+              <span class="text-base md:text-2xl glow-text text-right" 
+                    style="font-family: 'Great Vibes', cursive; color: #FFD700; text-shadow: 0 0 8px #FFD700, 0 0 12px #FFEA00, 0 0 16px #FFE066; margin-right: 8px; letter-spacing: 1px; margin-top: -2px;">
+                  Ray of Light
+              </span>
+          </div>
+        </div>
+        
+        
+        
+        <style>
+          nav .font-cinzel {
+              font-size: 1.5rem; 
+              letter-spacing: 0.5px;
+          }
+          
+          @media (min-width: 768px) {
+              nav .font-cinzel {
+                  font-size: 2.25rem; 
+              }
+          }
+          
+          
+          .glow-text {
+              text-shadow: 0 0 10px rgba(217, 70, 239, 0.8), 
+                           0 0 20px rgba(217, 70, 239, 0.6),
+                           0 0 30px rgba(217, 70, 239, 0.4);
+          }</style>
+ -->
+
+     
+
+<!-- trial -->
+
+
+
+
+
+
+
+
+<!-- BRAND: Eye-catching mystical design with your exact text -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+        <!-- DESKTOP LINKS -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+              <a href="index.html" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+              <a href="index.html#about" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+      
+              <div class="dropdown">
+                  <span class="nav-link text-purple-100 px-3 py-2 text-sm font-medium flex items-center cursor-pointer">
+                      Services
+                      <svg class="dropdown-arrow w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                  </span>
+                  <div class="dropdown-content">
+                      <a href="reading11.html">Readings</a>
+                      <a href="healing11.html">Healings</a>
+                      
+                      <!-- FLYOUT SUBMENU FOR LEARN -->
+                      <div class="flyout-item">
+                          <a href="#" class="flex justify-between items-center hover:bg-transparent">
+                              Learn
+                              <!-- <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                              </svg> -->
+                          </a>
+                          <div class="flyout-menu">
+                              <a href="learn_tarot_reading.html">Tarot Reading</a>
+                              <a href="learn_reiki.html">Reiki Healing</a>
+                              <a href="other_therapy.html">Other Therapy</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <a href="index.html#testimonials" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Testimonials</a>
+              <a href="index.html#contact" class="nav-link text-purple-100 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+          </div>
+      </div>
+  
+        <!-- HAMBURGER (always visible on small screens) -->
+        <div class="md:hidden flex-shrink-0">
+          <button id="mobile-menu-button" class="text-purple-300 hover:text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </nav>
+  
+  <div id="mobile-menu" class="mobile-menu md:hidden bg-black bg-opacity-90 hidden" style="margin-top:107px;">  
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Home</a>
+        <a href="index.html#about" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">About</a>
+
+        <div class="px-3 py-2">
+            <button id="mobile-services-button" class="w-full text-left text-purple-100 hover:text-white flex items-center justify-between">
+                Services
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div id="mobile-services-menu" class="mt-2 pl-4 hidden">
+                <a href="reading11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Readings</a>
+                <a href="healing11.html" class="text-purple-200 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Healings</a>
+                
+                <div class="mt-0">
+                    <button id="mobile-learn-button" class="w-full text-left   px-3 py-2 text-purple-200 hover:text-white flex items-center justify-between">
+                        Learn
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-learn-menu" class="mt-2 pl-4 hidden">
+                        <a href="learn_tarot_reading.html" class="text-purple-300 hover:text-white block px-5 py-2 " onclick="toggleMobileMenu()">Tarot Reading</a>
+                        <a href="learn_reiki.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Reiki Healing</a>
+                        <a href="other_therapy.html" class="text-purple-300 hover:text-white block px-5 py-2" onclick="toggleMobileMenu()">Other Therapy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html#testimonials" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Testimonials</a>
+        <a href="index.html#contact" class="text-purple-100 hover:text-white block px-3 py-2" onclick="toggleMobileMenu()">Contact</a>
+    </div>
+</div>
+  
+
+
+
+
+<!-- hero sectionnn  -->
+
+
+   <!-- Hero Section -->
+   <!-- <section class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"> -->
+   <!-- Hero Section -->
+   <section class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center ">
+            <h1 class="section-title text-reveal">
+                Healing Modalities
+            </h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6 floating-element"></div>
+            <p class="section-subtitle">
+                Experience profound transformation through our specialized energy healing services. 
+                Each session is designed to restore balance, clear blockages, and promote holistic well-being.These are different approaches to promoting well-being and balance in the body, mind, and spirit, often working with a person's energy.
+            </p>
+          
+        </div>
+    </div>
+    
+    <!-- Floating decorative elements -->
+    <div class="absolute top-20 left-10 w-10 h-10 rounded-full bg-purple-500 opacity-20 floating-element" style="animation-delay: 0s;"></div>
+    <div class="absolute top-40 right-20 w-6 h-6 rounded-full bg-pink-500 opacity-30 floating-element" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-40 left-20 w-8 h-8 rounded-full bg-purple-400 opacity-25 floating-element" style="animation-delay: 2s;"></div>
+</section>
+
+<!-- Healing Services Section -->
+    <!-- Healing Services Section -->
+    <!-- <section class="py-20 px-4 sm:px-6 lg:px-8"> -->
+        <section class="py-5 md:py-4 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="readings-grid">
+                <!-- Reiki Healing -->
+                <div class="elegant-card" data-aos="fade-up">
+                    <div class="card-header" onclick="openImageModal('img1.jpeg', 'Angelic / Oracle / Tarot Reading')">
+                        <img src="reikihealing.jpeg" 
+                             alt="Reiki Healing" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Reiki Healing</h3>
+                        <p class="card-description">
+                            A gentle, Japanese energy healing technique where a practitioner places their hands on or near the body to channel "universal life energy." There are many different types, each with a slightly different focus, such as Traditional Reiki for general well-being, Karuna Reiki for deeper healing.
+                        </p>
+                        
+                        <div class="card-footer">
+                            <div class="healing-pricing">
+                                <div class="pricing-formula">
+                                    <div class="formula-icon">✨</div>
+                                    <div class="formula-content">
+                                        <div class="base-price">499 Rs × No of days</div>
+                                        <div class="formula-result">= Healing amount in Rs</div>
+                                        <div class="formula-note">
+                                            No of days are decided by client healing requirement and it's different for each client.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="pricing-examples">
+                                    <div class="example-item">
+                                        <span class="example-days">3 days</span>
+                                        <span class="example-amount">1,497 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">7 days</span>
+                                        <span class="example-amount">3,493 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">14 days</span>
+                                        <span class="example-amount">6,986 Rs</span>
+                                    </div>
+                                </div> -->
+                            </div>
+
+
+                               <!-- Enroll Now Button -->
+                               <button class="card-button enroll-now-btn" data-course="Reiki Healing">
+                                <i class="fas fa-star mr-2"></i> Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lama Fera -->
+                <div class="elegant-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">
+                        <img src="lamafera.jpeg" 
+                             alt="Lama Fera" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Lama Fera</h3>
+                        <p class="card-description">
+                            An ancient powerful Tibetan Buddhist healing system that uses sacred symbols and mantras to channel divine energy from Lord Buddha. It treats chronic diseases, eliminates the power of dark forces, cleanses your body and soul, protects from evil eyes and bad spirits.
+                        </p>
+                        
+                        <div class="card-footer">
+                            <div class="healing-pricing">
+                                <div class="pricing-formula">
+                                    <div class="formula-icon">🌀</div>
+                                    <div class="formula-content">
+                                        <div class="base-price">1499 Rs × No of days</div>
+                                        <div class="formula-result">= Healing amount in Rs</div>
+                                        <div class="formula-note">
+                                            No of days are decided by client healing requirement and it's different for each client.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="pricing-examples">
+                                    <div class="example-item">
+                                        <span class="example-days">3 days</span>
+                                        <span class="example-amount">4,497 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">7 days</span>
+                                        <span class="example-amount">10,493 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">14 days</span>
+                                        <span class="example-amount">20,986 Rs</span>
+                                    </div>
+                                </div> -->
+                            </div>
+
+
+
+                            <button class="card-button enroll-now-btn" data-course="Lama Fera">
+                                <i class="fas fa-star mr-2"></i> Enroll Now
+                            </button>
+                        </div>
+                     
+                    </div>
+                </div>
+                
+                <!-- Psychic Surgery -->
+                <div class="elegant-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <img src="physic surgery.jpeg" 
+                             alt="Psychic Surgery" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Psychic Surgery</h3>
+                        <p class="card-description">
+                            Psychic surgery operates on the energetic level. It targets imbalances and blockages in the body's subtle energy system. Psychic surgery in Reiki is a profound and intuitive process. The practitioner tunes into the universal life force energy and guided by their intuition, identifies areas of the body with imbalances or blockages.
+                        </p>
+                        
+                        <div class="card-footer">
+                            <div class="healing-pricing">
+                                <div class="pricing-formula">
+                                    <div class="formula-icon">⚡</div>
+                                    <div class="formula-content">
+                                        <div class="base-price">749 Rs × No of days</div>
+                                        <div class="formula-result">= Healing amount in Rs</div>
+                                        <div class="formula-note">
+                                            No of days are decided by client healing requirement and it's different for each client.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="pricing-examples">
+                                    <div class="example-item">
+                                        <span class="example-days">3 days</span>
+                                        <span class="example-amount">2,247 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">7 days</span>
+                                        <span class="example-amount">5,243 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">14 days</span>
+                                        <span class="example-amount">10,486 Rs</span>
+                                    </div>
+                                </div> -->
+                            </div>
+
+
+                              <!-- Enroll Now Button -->
+                              <button class="card-button enroll-now-btn" data-course="Psychic Surgery">
+                                <i class="fas fa-star mr-2"></i> Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DNA Reiki -->
+                <div class="elegant-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-header">
+                        <img src="dna reiki.jpeg" 
+                             alt="DNA Reiki" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">DNA Reiki</h3>
+                        <p class="card-description">
+                            This is a specialized form of energy healing that focuses on activating and restoring a person's spiritual or energetic DNA, which help with deep-seated issues and ancestral patterns.
+                        </p>
+                        
+                        <div class="card-footer">
+                            <div class="healing-pricing">
+                                <div class="pricing-formula">
+                                    <div class="formula-icon">🧬</div>
+                                    <div class="formula-content">
+                                        <div class="base-price">949 Rs × No of days</div>
+                                        <div class="formula-result">= Healing amount in Rs</div>
+                                        <div class="formula-note">
+                                            No of days are decided by client healing requirement and it's different for each client.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="pricing-examples">
+                                    <div class="example-item">
+                                        <span class="example-days">3 days</span>
+                                        <span class="example-amount">2,847 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">7 days</span>
+                                        <span class="example-amount">6,643 Rs</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-days">14 days</span>
+                                        <span class="example-amount">13,286 Rs</span>
+                                    </div>
+                                </div> -->
+                            </div>
+
+
+                                <!-- Enroll Now Button -->
+                                <button class="card-button enroll-now-btn" data-course="DNA Reiki">
+                                    <i class="fas fa-star mr-2"></i> Enroll Now
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        /* Beautiful Healing Pricing Styles */
+.healing-pricing {
+    position: relative;
+    background: linear-gradient(135deg, rgba(127, 90, 240, 0.08), rgba(217, 70, 239, 0.05));
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(127, 90, 240, 0.2);
+    transition: all 0.4s ease;
+}
+
+.healing-pricing:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(127, 90, 240, 0.15);
+    border-color: rgba(127, 90, 240, 0.4);
+}
+
+.pricing-formula {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(127, 90, 240, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid #7f5af0;
+}
+
+.formula-icon {
+    font-size: 24px;
+    background: linear-gradient(135deg, #7f5af0, #d946ef);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.formula-content {
+    flex: 1;
+}
+
+.base-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #7f5af0;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(127, 90, 240, 0.3);
+}
+
+.formula-result {
+    font-size: 16px;
+    font-weight: 600;
+    color: #d946ef;
+    margin-bottom: 8px;
+}
+
+.formula-note {
+    font-size: 12px;
+    color: #a7a9be;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.pricing-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.example-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(127, 90, 240, 0.08);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.example-item:hover {
+    background: rgba(127, 90, 240, 0.12);
+    border-color: rgba(127, 90, 240, 0.3);
+    transform: translateX(5px);
+}
+
+.example-days {
+    color: #fffffe;
+    font-weight: 600;
+    font-size: 14px;
+    background: rgba(127, 90, 240, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.example-amount {
+    color: #d946ef;
+    font-weight: 700;
+    font-size: 16px;
+    text-shadow: 0 0 8px rgba(217, 70, 239, 0.3);
+}
+
+/* Card footer adjustments for healing pricing */
+.card-footer {
+    background: transparent;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .pricing-formula {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .formula-icon {
+        align-self: center;
+    }
+    
+    .example-item {
+        padding: 10px 12px;
+    }
+    
+    .base-price {
+        font-size: 16px;
+    }
+    
+    .formula-result {
+        font-size: 14px;
+    }
+}
+
+/* Floating animation for pricing cards */
+.elegant-card:hover .healing-pricing {
+    animation: gentleFloat 3s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Gradient border effect */
+.healing-pricing::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #7f5af0, #d946ef, #7f5af0);
+    border-radius: 18px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.healing-pricing:hover::before {
+    opacity: 0.3;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
+<script>
+    // ENROLLMENT FORM FUNCTIONALITY
+    const enrollmentModal = document.getElementById('enrollmentModal');
+    const enrollmentClose = document.getElementById('enrollmentClose');
+    const cancelEnrollment = document.getElementById('cancelEnrollment');
+    const enrollmentForm = document.getElementById('enrollmentForm');
+    const selectedHealingInput = document.getElementById('selectedHealing');
+    const selectedHealingDisplay = document.getElementById('selectedHealingDisplay');
+    
+    // Open enrollment modal when clicking Enroll Now buttons
+    document.querySelectorAll('.enroll-now-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const healingType = this.getAttribute('data-course');
+            selectedHealingInput.value = healingType;
+            selectedHealingDisplay.textContent = healingType;
+            openEnrollmentModal();
+        });
+    });
+    
+    function openEnrollmentModal() {
+        enrollmentModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeEnrollmentModal() {
+        enrollmentModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Close enrollment modal when clicking the close button
+    enrollmentClose.addEventListener('click', closeEnrollmentModal);
+    
+    // Close enrollment modal when clicking cancel button
+    cancelEnrollment.addEventListener('click', closeEnrollmentModal);
+    
+    // Close enrollment modal when clicking outside the form
+    enrollmentModal.addEventListener('click', (e) => {
+        if (e.target === enrollmentModal) {
+            closeEnrollmentModal();
+        }
+    });
+    
+    // Close enrollment modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && enrollmentModal.classList.contains('active')) {
+            closeEnrollmentModal();
+        }
+    });
+    
+    // Handle form submission
+    enrollmentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const healingType = selectedHealingInput.value;
+        
+        // Format message for WhatsApp
+        let message = ` *New Healing Enrollment Request* \n\n`;
+        message += `*Healing Service:* ${healingType}\n`;
+        message += `*Full Name:* ${formData.get('fullName')}\n`;
+        message += `*Mobile:* ${formData.get('mobile')}\n`;
+        message += `*Email:* ${formData.get('email') || 'Not provided'}\n`;
+        message += `*Birth Details:*\n`;
+        message += `  - Date: ${formData.get('birthDate')}\n`;
+        message += `  - Time: ${formData.get('birthTime')}\n`;
+        message += `  - Location: ${formData.get('birthLocation')}\n\n`;
+        message += `Thank you for your interest in our healing services! We will contact you soon to schedule your session.`;
+        
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // WhatsApp number (replace with your actual number)
+        const whatsappNumber = "918956259430"; // Your WhatsApp number
+        
+        // Create WhatsApp URL
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Open WhatsApp in a new tab
+        window.open(whatsappURL, '_blank');
+        
+        // Reset form and close modal
+        enrollmentForm.reset();
+        closeEnrollmentModal();
+        
+        // Show success message
+        alert("Thank you! Your enrollment request has been submitted. You'll be redirected to WhatsApp to complete the process.");
+    });
+
+    // Your existing JavaScript functions remain the same
+    // ... (all your existing JavaScript) ...
+</script>
+
+<!-- CTA Section -->
+<!-- <section class="py-20 px-4 sm:px-6 lg:px-8"> -->
+    <section class="py-8 md:py-16 px-4 sm:px-6 lg:px-8 scroll-mt-24"> <!-- Reduced from py-20 -->
+    <div class="max-w-7xl mx-auto">
+        <div class="cta-section" data-aos="fade-up">
+            <h2 class="cta-title">Ready for Transformation?</h2>
+            <p class="cta-description">
+                Book a healing session today and experience profound transformation, balance restoration, and holistic well-being.
+            </p>
+            <!-- <button class="cta-button">
+                <i class="fas fa-star mr-2"></i> Book Your Healing Session
+            </button> -->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-cinzel text-purple-300 mb-4">Tarot Tales By Rashmi</h3>
+                    <p class="text-purple-200">
+                        Providing intuitive tarot readings to help you navigate life's journey with clarity and confidence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-purple-200 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-purple-200 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#readings" class="text-purple-200 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#testimonials" class="text-purple-200 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-purple-200 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Reading Hours</h3>
+                    <ul class="space-y-2 text-purple-200">
+                        <li class="flex justify-between"><span>Monday - Friday</span> <span>10am - 8pm</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>11am - 6pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
+                    <p class="text-purple-200 mb-4">
+                        Subscribe for monthly tarot insights and special offers.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-black bg-opacity-50 border border-purple-800 rounded-l-md px-4 py-2 text-white focus:outline-none w-full">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-purple-200 mb-4 md:mb-0">
+                    &copy; 2025 Tarot Tales By Rashmi. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-purple-200 hover:text-white transition duration-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ <!-- Back to top button -->
+ <div class="back-to-top  w-16 h-16 bg-purple-600 hover:bg-white-700 rounded-full flex items-center justify-center text-white shadow-lg transform transition duration-300 hover:scale-110">
+  <i class="fas fa-chevron-up"></i>
+</div>
+<style>   /* Back to top button */
+  .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      /* background: var(--primary);
+      color: var(--dark); */
+      background: wheat;
+      color: black;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+  }
+
+</style>
+
+    <!-- Floating Action Button -->
+    <!-- <div class="fixed bottom-8 right-8 z-50">
+        <a href="#contact" class="w-16 h-16 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center text-white shadow-lg transform transition duration-300 hover:scale-110">
+            <i data-feather="message-circle" class="w-6 h-6"></i>
+        </a>
+    </div> -->
+
+
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+
+ 
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+
+//         // Mobile menu functionality
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('active');
+}
+
+// // Mobile services menu functionality
+document.getElementById('mobile-services-button').addEventListener('click', function() {
+    const mobileServicesMenu = document.getElementById('mobile-services-menu');
+    mobileServicesMenu.classList.toggle('hidden');
+});
+
+// // Toggle mobile menu when button is clicked
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    toggleMobileMenu();
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+    }
+});
+
+
+
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // toggle menu
+  mobileMenuButton.addEventListener("click", () => {
+    // mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("show"); // toggle show class
+  });
+
+  // close menu when clicking any link inside it
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      // mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("show");
+      mobileServicesMenu.classList.remove("show");
+            mobileLearnMenu.classList.remove("show");
+    });
+  });
+
+  // close services submenu when link is clicked
+  document.querySelectorAll("#mobile-services-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+
+  // toggle services submenu inside mobile
+  const mobileServicesButton = document.getElementById("mobile-services-button");
+  const mobileServicesMenu = document.getElementById("mobile-services-menu");
+  const mobileLearnButton = document.getElementById("mobile-learn-button");
+    const mobileLearnMenu = document.getElementById("mobile-learn-menu");
+  if (mobileServicesButton) {
+    mobileServicesButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // mobileServicesMenu.classList.toggle("hidden");
+      mobileServicesMenu.classList.toggle("show"); // toggle 'show' class instead of hidden
+    });
+  }
+
+
+
+
+  if (mobileLearnButton) {
+        mobileLearnButton.addEventListener("click", (e) => {
+            e.stopPropagation();
+            mobileLearnMenu.classList.toggle("show");
+        });
+    }
+
+
+
+
+
+
+
+
+
+//   
+
+  // Create particle background
+  function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Random delay
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+
+
+
+   // Equalize card heights
+   function equalizeCardHeights() {
+            const cards = document.querySelectorAll('.elegant-card');
+            let maxHeight = 0;
+            
+            // Reset heights first
+            cards.forEach(card => {
+                card.style.height = 'auto';
+            });
+            
+
+            // Find the maximum height
+            cards.forEach(card => {
+                const cardHeight = card.offsetHeight;
+                if (cardHeight > maxHeight) {
+                    maxHeight = cardHeight;
+                }
+            });
+            
+            // Set all cards to the maximum height
+            cards.forEach(card => {
+                card.style.height = `${maxHeight}px`;
+            });
+        }
+
+
+
+
+ // Call the function on load and resize
+ window.addEventListener('load', equalizeCardHeights);
+        window.addEventListener('resize', equalizeCardHeights);
+        
+        // NEW: Image Modal Functionality
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const modalClose = document.getElementById('modalClose');
+        
+        function openImageModal(imageSrc, caption) {
+            modalImage.src = imageSrc;
+            modalCaption.textContent = caption;
+            imageModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+        
+        function closeImageModal() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+        
+        // Close modal when clicking the close button
+        modalClose.addEventListener('click', closeImageModal);
+        
+        // Close modal when clicking outside the image
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeImageModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                closeImageModal();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+  (function(){
+    emailjs.init("_Z4KNnjSnhivkvh72"); // replace with your actual Public Key
+  })();
+
+
+
+function sendEmail(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  emailjs.sendForm('service_cbgel4l', 'template_kkddrkb', '#contact-form')
+    .then(function() {
+      alert('Message sent successfully!');
+      document.getElementById('contact-form').reset();
+    }, function(error) {
+      alert('Failed to send message. Please try again.');
+      console.error('EmailJS error:', error);
+    });
+}
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- BRAND: allow shrink and truncation -->
+        <!-- <div class="flex items-center min-w-0">
+          <img src="logo1.png" alt="Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain flex-shrink-0 mr-2 md:mr-3">
+          <div class="flex flex-col leading-tight min-w-0 overflow-hidden">
+              <span class="text-2xl md:text-4xl font-cinzel font-bold text-purple-300 glow-text truncate">
+                  Tarot Tales By Rashmi
+              </span>
+              <span class="text-base md:text-2xl glow-text text-right" 
+                    style="font-family: 'Great Vibes', cursive; color: #FFD700; text-shadow: 0 0 8px #FFD700, 0 0 12px #FFEA00, 0 0 16px #FFE066; margin-right: 8px; letter-spacing: 1px; margin-top: -2px;">
+                  Ray of Light
+              </span>
+          </div>
+        </div>
+        
+        
+        
+        <style>
+          nav .font-cinzel {
+              font-size: 1.5rem; 
+              letter-spacing: 0.5px;
+          }
+          
+          @media (min-width: 768px) {
+              nav .font-cinzel {
+                  font-size: 2.25rem; 
+              }
+          }
+          
+          
+          .glow-text {
+              text-shadow: 0 0 10px rgba(217, 70, 239, 0.8), 
+                           0 0 20px rgba(217, 70, 239, 0.6),
+                           0 0 30px rgba(217, 70, 239, 0.4);
+          }</style>
+        
+         -->
+          
+                
