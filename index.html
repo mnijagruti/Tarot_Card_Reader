@@ -1799,17 +1799,25 @@ img, svg { max-width: 100%; height: auto; }
 
 
 
+
+
+
                     
-                    <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
+    <!-- Visitor Counter -->
+<div class="fixed bottom-4 left-4 bg-black bg-opacity-70 backdrop-blur-md text-white px-4 py-2 rounded-lg border border-purple-700 text-sm z-40">
+    <i data-feather="users" class="inline w-4 h-4 mr-2"></i>
+    <span id="visitor-count">Loading...</span> visitors
+</div>
+                    <!-- <h3 class="text-lg text-white font-medium mb-4">Newsletter</h3>
                     <p class="text-purple-200 mb-4">
                         Subscribe for monthly tarot insights and special offers.
-                    </p>
-                    <div class="flex">
+                    </p> -->
+                    <!-- <div class="flex">
                         <input type="email" placeholder="Your email" class="bg-black bg-opacity-50 border border-purple-800 rounded-l-md px-4 py-2 text-white focus:outline-none w-full">
                         <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                             <i data-feather="send"></i>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -2334,6 +2342,132 @@ function sendEmail(event) {
 }
 
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Professional Visitor Counter
+class VisitorCounter {
+    constructor() {
+        this.apiUrl = 'https://api.countapi.xyz';
+        this.namespace = 'tarot-tales-by-rashmi';
+        this.key = 'website-visitors';
+        this.visitorId = this.getVisitorId();
+        this.hasCounted = sessionStorage.getItem('hasCountedVisit');
+    }
+
+    // Generate or retrieve unique visitor ID
+    getVisitorId() {
+        let visitorId = localStorage.getItem('visitorId');
+        if (!visitorId) {
+            visitorId = 'visitor-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('visitorId', visitorId);
+        }
+        return visitorId;
+    }
+
+    // Check if this is a new session
+    isNewSession() {
+        return !this.hasCounted;
+    }
+
+    // Update the counter display
+    updateDisplay(count) {
+        const countElement = document.getElementById('visitor-count');
+        if (countElement) {
+            // Format number with commas
+            countElement.textContent = count.toLocaleString();
+            
+            // Add animation for new visits
+            if (this.isNewSession()) {
+                countElement.classList.add('animate-pulse');
+                setTimeout(() => {
+                    countElement.classList.remove('animate-pulse');
+                }, 2000);
+            }
+        }
+    }
+
+    // Hit counter API
+    async hitCounter() {
+        try {
+            const response = await fetch(`${this.apiUrl}/hit/${this.namespace}/${this.key}`);
+            const data = await response.json();
+            return data.value;
+        } catch (error) {
+            console.error('Error updating visitor counter:', error);
+            return null;
+        }
+    }
+
+    // Get current count
+    async getCount() {
+        try {
+            const response = await fetch(`${this.apiUrl}/get/${this.namespace}/${this.key}`);
+            const data = await response.json();
+            return data.value;
+        } catch (error) {
+            console.error('Error fetching visitor count:', error);
+            return null;
+        }
+    }
+
+    // Initialize the counter
+    async init() {
+        // Only count if this is a new session (not a refresh)
+        if (this.isNewSession()) {
+            const newCount = await this.hitCounter();
+            if (newCount !== null) {
+                this.updateDisplay(newCount);
+                sessionStorage.setItem('hasCountedVisit', 'true');
+            }
+        } else {
+            // Just display the current count
+            const currentCount = await this.getCount();
+            if (currentCount !== null) {
+                this.updateDisplay(currentCount);
+            }
+        }
+    }
+}
+
+// Initialize the counter when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const counter = new VisitorCounter();
+    counter.init();
+    
+    // Refresh feather icons for the counter
+    feather.replace();
+});
+</script>
 </body>
 </html>
 
@@ -2423,6 +2557,7 @@ function sendEmail(event) {
           
 
                 
+
 
 
 
