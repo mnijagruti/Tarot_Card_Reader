@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle Collection Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: white;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Perfect Masonry Layout - No Black Space */
+        .masonry-grid {
+            columns: 4;
+            column-gap: 15px;
+        }
+        
+        .grid-item {
+            break-inside: avoid;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background: transparent;
+        }
+        
+        .grid-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+        
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-prev, .lightbox-next {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .lightbox-prev:hover, .lightbox-next:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .masonry-grid {
+                columns: 2;
+            }
+            
+            .lightbox-nav {
+                padding: 0 10px;
+            }
+            
+            .lightbox-prev, .lightbox-next {
+                padding: 12px 15px;
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .masonry-grid {
+                columns: 1;
+            }
+            body {
+                padding: 10px;
+            }
+            
+            .lightbox-img {
+                max-width: 95%;
+                max-height: 80%;
+            }
+        }
+
+        /* Simple Fade-in Animation */
+        .grid-item {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+
+<h1 style="text-align:center">Candle Gallery</h1>
+<br>
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            <!-- Candle 1 -->
+            <div class="grid-item">
+                <img src="1.jpeg" alt="Candle 1" data-src="1.jpeg">
+            </div>
+            
+            <!-- Candle 2 -->
+            <div class="grid-item">
+                <img src="2.jpeg" alt="Candle 2" data-src="2.jpeg">
+            </div>
+            
+            <!-- Candle 3 -->
+            <div class="grid-item">
+                <img src="3.jpeg" alt="Candle 3" data-src="3.jpeg">
+            </div>
+            
+            <!-- Candle 4 -->
+            <div class="grid-item">
+                <img src="4.jpeg" alt="Candle 4" data-src="4.jpeg">
+            </div>
+            
+            <!-- Candle 5 -->
+            <div class="grid-item">
+                <img src="5.jpeg" alt="Candle 5" data-src="5.jpeg">
+            </div>
+            
+            <!-- Candle 6 -->
+            <div class="grid-item">
+                <img src="6.jpeg" alt="Candle 6" data-src="6.jpeg">
+            </div>
+            
+            <!-- Candle 7 -->
+            <div class="grid-item">
+                <img src="7.jpeg" alt="Candle 7" data-src="7.jpeg">
+            </div>
+            
+            <!-- Candle 8 -->
+            <div class="grid-item">
+                <img src="8.jpeg" alt="Candle 8" data-src="8.jpeg">
+            </div>
+            
+            <!-- Candle 9 -->
+            <div class="grid-item">
+                <img src="9.jpeg" alt="Candle 9" data-src="9.jpeg">
+            </div>
+            
+            <!-- Candle 10 -->
+            <div class="grid-item">
+                <img src="10.jpeg" alt="Candle 10" data-src="10.jpeg">
+            </div>
+            
+            <!-- Candle 11 -->
+           
+        </div>
+    </div>
+
+    <!-- Lightbox HTML -->
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev">&#10094;</button>
+            <button class="lightbox-next">&#10095;</button>
+        </div>
+        <img class="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        // Lightbox functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const lightboxPrev = document.querySelector('.lightbox-prev');
+        const lightboxNext = document.querySelector('.lightbox-next');
+        const images = document.querySelectorAll('.grid-item img');
+        
+        let currentImageIndex = 0;
+
+        // Open lightbox when image is clicked
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        });
+
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Navigate to previous image
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentImageIndex].src;
+        });
+
+        // Navigate to next image
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            lightboxImg.src = images[currentImageIndex].src;
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else if (e.key === 'ArrowLeft') {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                lightboxImg.src = images[currentImageIndex].src;
+            } else if (e.key === 'ArrowRight') {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                lightboxImg.src = images[currentImageIndex].src;
+            }
+        });
+
+        // Simple hover effect for grid items
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.03)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
